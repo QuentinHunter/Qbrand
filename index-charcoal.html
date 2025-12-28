@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quentin Hunter | I Help Small Business Owners Double Their Profits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --black: #32373c;
+            --charcoal: #3d434a;
+            --dark: #454c54;
+            --gold: #e6bb00;
+            --gold-light: #f0c820;
+            --gold-dark: #d4a900;
+            --gold-glow: rgba(230, 187, 0, 0.4);
+            --cream: #f8f6f1;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--white);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Premium Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(50, 55, 60, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--black) !important;
+            padding: 14px 32px !important;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            transition: all 0.3s !important;
+            letter-spacing: 0.02em;
+            text-shadow: none;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--gold-glow);
+        }
+
+        /* Hero Section - Charcoal Theme */
+        .hero {
+            min-height: 100vh;
+            background: var(--black);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(230, 187, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(230, 187, 0, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            padding: 40px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(230, 187, 0, 0.1);
+            border: 1px solid var(--gold);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 35px;
+        }
+
+        .hero-badge span {
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+            position: relative;
+            text-shadow: 0 0 40px rgba(230, 187, 0, 0.3);
+        }
+
+        .hero h1 .gold::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, rgba(230, 187, 0, 0.25) 0%, rgba(230, 187, 0, 0.15) 100%);
+            z-index: -1;
+        }
+
+        .hero-lead {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 35px;
+            line-height: 1.8;
+            max-width: 540px;
+        }
+
+        .hero-hook {
+            background: linear-gradient(135deg, rgba(230, 187, 0, 0.12) 0%, rgba(230, 187, 0, 0.06) 100%);
+            border-left: 3px solid var(--gold);
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hero-hook p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .hero-hook strong {
+            color: var(--gold);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+            box-shadow: 0 4px 15px rgba(230, 187, 0, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px var(--gold-glow);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(5px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50px;
+        }
+
+        .btn-secondary:hover {
+            color: var(--white);
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .hero-stat-value span {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(230, 187, 0, 0.3);
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(230, 187, 0, 0.25);
+            border-radius: 20px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(15%);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(50,55,60,0.95) 0%, transparent 100%);
+            z-index: 1;
+        }
+
+        .hero-image-text {
+            position: absolute;
+            bottom: 35px;
+            left: 35px;
+            right: 35px;
+            z-index: 3;
+        }
+
+        .hero-image-text p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        .hero-image-text span {
+            display: block;
+            margin-top: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--gold);
+        }
+
+        /* Floating elements */
+        .float-element {
+            position: absolute;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.08;
+            filter: blur(60px);
+        }
+
+        .float-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .float-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: 10%;
+        }
+
+        /* Problem Section - Charcoal Theme */
+        .problem-section {
+            padding: 140px 0;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(230, 187, 0, 0.35), transparent);
+        }
+
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(230, 187, 0, 0.25);
+        }
+
+        .section-intro h2 {
+            font-size: 3.2rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-intro p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.8;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(230, 187, 0, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+        }
+
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(230, 187, 0, 0.2) 0%, rgba(230, 187, 0, 0.08) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .problem-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--gold);
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+
+        .problem-card > p {
+            color: rgba(255,255,255,0.65);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .problem-cost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(230, 187, 0, 0.12);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Solution Section - Light & Clean */
+        .solution-section {
+            padding: 140px 0;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .solution-content h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .solution-content h2 span {
+            color: var(--gold-dark);
+        }
+
+        .solution-content > p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        .solution-points {
+            list-style: none;
+            margin-bottom: 45px;
+        }
+
+        .solution-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 1.05rem;
+            color: var(--charcoal);
+        }
+
+        .solution-points li:last-child {
+            border-bottom: none;
+        }
+
+        .solution-points li::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2332373c' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+            background-size: 14px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .solution-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: all 0.4s;
+        }
+
+        .solution-cta:hover {
+            background: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(50,55,60,0.2);
+        }
+
+        .solution-proof {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.06);
+            position: relative;
+            border: 2px solid var(--gold);
+        }
+
+        .solution-proof::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gold);
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0.15;
+            filter: blur(20px);
+        }
+
+        .proof-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .proof-header h3 {
+            font-size: 1.6rem;
+            color: var(--charcoal);
+        }
+
+        .proof-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .proof-metric {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--cream);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .proof-metric:hover {
+            transform: scale(1.02);
+        }
+
+        .proof-metric-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .proof-metric-value span {
+            color: var(--gold-dark);
+        }
+
+        .proof-metric-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 140px 0;
+            background: var(--white);
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .services-header h2 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+        }
+
+        .services-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .service-card {
+            background: var(--cream);
+            border-radius: 24px;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            z-index: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 80px rgba(50,55,60,0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover > p,
+        .service-card:hover .service-features li {
+            color: var(--white);
+        }
+
+        .service-card:hover .service-result {
+            background: rgba(230, 187, 0, 0.15);
+        }
+
+        .service-card:hover .service-result p {
+            color: var(--gold-light);
+        }
+
+        .service-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.2;
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            line-height: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--charcoal);
+            margin-bottom: 18px;
+            transition: color 0.5s;
+        }
+
+        .service-card > p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            transition: color 0.5s;
+        }
+
+        .service-result {
+            background: rgba(230, 187, 0, 0.15);
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            transition: background 0.5s;
+        }
+
+        .service-result p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin: 0;
+            font-weight: 500;
+            transition: color 0.5s;
+        }
+
+        .service-result strong {
+            color: var(--gold-dark);
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.5s;
+        }
+
+        .service-features li::before {
+            content: '→';
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 140px 0;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(230, 187, 0, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .process-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-header h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        .process-header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.8;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 55px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), rgba(230, 187, 0, 0.3));
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-marker {
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 25px var(--gold-glow);
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+
+        .process-step .timeframe {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 8px 18px;
+            background: rgba(230, 187, 0, 0.12);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Also Section */
+        .also-section {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+
+        .also-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .also-header h2 {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .also-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .also-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .also-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            transition: all 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .also-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+            border-color: var(--gold);
+        }
+
+        .also-card h3 {
+            font-size: 1.7rem;
+            color: var(--charcoal);
+            margin-bottom: 18px;
+        }
+
+        .also-card > p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 28px;
+        }
+
+        .also-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .also-features li {
+            padding: 12px 0;
+            font-size: 1rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .also-features li::before {
+            content: '→';
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        .also-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .also-link:hover {
+            color: var(--gold-dark);
+            gap: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 140px 0;
+            background: var(--charcoal);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 45px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.15;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            line-height: 1;
+        }
+
+        .testimonial-quote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: var(--white);
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-result {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(230, 187, 0, 0.2) 0%, rgba(230, 187, 0, 0.1) 100%);
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-result p {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin: 0;
+        }
+
+        .testimonial-author h4 {
+            font-size: 1.05rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 160px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(230, 187, 0, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section > .cta-content > p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .cta-guarantee {
+            background: rgba(230, 187, 0, 0.08);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px 50px;
+            margin-bottom: 50px;
+            display: inline-block;
+            box-shadow: 0 0 30px rgba(230, 187, 0, 0.15);
+        }
+
+        .cta-guarantee h4 {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            text-shadow: 0 0 20px rgba(230, 187, 0, 0.3);
+        }
+
+        .cta-guarantee p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cta-note {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .cta-scarcity {
+            margin-top: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: rgba(230, 187, 0, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 0 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 0.8rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .social-links a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-image-wrapper {
+                display: none;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .services-grid,
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-intro h2,
+            .services-header h2,
+            .solution-content h2,
+            .process-header h2,
+            .testimonials-header h2,
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .process-timeline,
+            .proof-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .also-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="pages/story.html">About</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/speaking.html">Speaking</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="float-element float-1"></div>
+        <div class="float-element float-2"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>Business Growth Expert</span>
+                    </div>
+                    <h1>I Help Small Business Owners <span class="gold">Double Their Profits</span> in 12 Months or Less</h1>
+                    <p class="hero-lead">You didn't build your business to stay stuck. I work with ambitious owners who are tired of plateauing—and ready to break through to the next level.</p>
+
+                    <div class="hero-hook">
+                        <p><strong>Here's the uncomfortable truth:</strong> Your business is leaking money right now. Hidden in your pricing, buried in wasted marketing spend, lost in inefficient operations. Most owners leave 30-50% of potential profit on the table. I find it and put it in your pocket.</p>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="pages/connect.html" class="btn-primary">
+                            Book Your Profit Audit
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="pages/valuation-tool.html" class="btn-secondary">Free Business Assessment</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">£40M<span>+</span></div>
+                            <div class="hero-stat-label">Value Created</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">2.3<span>x</span></div>
+                            <div class="hero-stat-label">Avg. Profit Increase</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">120<span>+</span></div>
+                            <div class="hero-stat-label">Businesses Transformed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                        <div class="hero-image-overlay"></div>
+                        <div class="hero-image-text">
+                            <p>"The best investment I ever made in my business."</p>
+                            <span>— Manufacturing Business Owner, Birmingham</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-tag">The Problem</span>
+                <h2>Three Profit Killers Costing You £100K+ Every Year</h2>
+                <p>After 15 years and 120+ businesses, I've found the same three leaks drain profit from almost every company. The good news? Each one is fixable—usually within 90 days.</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>The Pricing Trap</h3>
+                    <p>You set prices years ago and haven't touched them. Or you price based on competitors, not value. Either way, you're giving away 20-40% of your profit with every single sale.</p>
+                    <span class="problem-cost">£80K-£200K lost annually</span>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M23 6l-9.5 9.5-5-5L1 18"/>
+                            <path d="M17 6h6v6"/>
+                        </svg>
+                    </div>
+                    <h3>Marketing Black Hole</h3>
+                    <p>Money goes out, but you can't prove what's working. No system for turning strangers into leads, leads into customers, customers into raving fans who refer others.</p>
+                    <span class="problem-cost">£50K-£150K wasted annually</span>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>The Owner Trap</h3>
+                    <p>Everything runs through you. You can't scale because you can't step back. More revenue means more hours—not more profit, not more freedom. You own a job, not a business.</p>
+                    <span class="problem-cost">£100K+ opportunity cost</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <span class="section-tag">The Solution</span>
+                    <h2>Why Business Owners <span>Choose Me</span></h2>
+                    <p>I'm not a consultant who hands you a report and disappears. I'm not a coach who just asks questions. I'm a business owner—I've bought, built, and sold companies. I know what works because I've done it.</p>
+                    <p>When you work with me, you get:</p>
+
+                    <ul class="solution-points">
+                        <li><strong>Specific, actionable guidance</strong>—exact steps tailored to your business, not generic frameworks</li>
+                        <li><strong>Implementation support</strong>—I work alongside you to ensure things actually happen</li>
+                        <li><strong>Accountability that drives results</strong>—because knowing what to do isn't the problem; doing it is</li>
+                        <li><strong>15 years of pattern recognition</strong>—I've seen your problems before and I know what fixes them</li>
+                    </ul>
+
+                    <a href="pages/connect.html" class="solution-cta">
+                        See If We're a Fit
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="solution-proof">
+                    <div class="proof-header">
+                        <h3>Results From Real Clients</h3>
+                    </div>
+                    <div class="proof-metrics">
+                        <div class="proof-metric">
+                            <div class="proof-metric-value">£40M<span>+</span></div>
+                            <div class="proof-metric-label">Total value created</div>
+                        </div>
+                        <div class="proof-metric">
+                            <div class="proof-metric-value">2.3<span>x</span></div>
+                            <div class="proof-metric-label">Average profit increase</div>
+                        </div>
+                        <div class="proof-metric">
+                            <div class="proof-metric-value">67<span>%</span></div>
+                            <div class="proof-metric-label">Average margin improvement</div>
+                        </div>
+                        <div class="proof-metric">
+                            <div class="proof-metric-value">90<span> days</span></div>
+                            <div class="proof-metric-label">To first measurable ROI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-tag">How I Help</span>
+                <h2>Three Ways I Put More Money In Your Pocket</h2>
+                <p>Every engagement is tailored to your situation. But most businesses need help in one (or more) of these areas.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-number">01</span>
+                    <h3>Revenue & Pricing</h3>
+                    <p>Stop undercharging. I show you what your market will actually pay—and help you build the value to justify premium prices.</p>
+                    <div class="service-result">
+                        <p><strong>Typical result:</strong> 25-45% increase in average transaction value within 90 days</p>
+                    </div>
+                    <ul class="service-features">
+                        <li>Complete pricing strategy overhaul</li>
+                        <li>Value proposition development</li>
+                        <li>Sales process optimisation</li>
+                        <li>Customer retention systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-number">02</span>
+                    <h3>Marketing & Growth</h3>
+                    <p>Turn marketing from a cost into a profit centre. Build systems that generate leads predictably and convert them consistently.</p>
+                    <div class="service-result">
+                        <p><strong>Typical result:</strong> 2-3x increase in qualified leads within 6 months</p>
+                    </div>
+                    <ul class="service-features">
+                        <li>Lead generation systems</li>
+                        <li>Conversion rate optimisation</li>
+                        <li>Marketing automation</li>
+                        <li>ROI tracking & attribution</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-number">03</span>
+                    <h3>Systems & Scale</h3>
+                    <p>Build infrastructure that grows without you burning out. Create processes that work whether you're there or not.</p>
+                    <div class="service-result">
+                        <p><strong>Typical result:</strong> 10-15 hours per week freed for strategic work</p>
+                    </div>
+                    <ul class="service-features">
+                        <li>Process documentation</li>
+                        <li>Workflow automation</li>
+                        <li>Team development</li>
+                        <li>Operational efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header">
+                <span class="section-tag">The Process</span>
+                <h2>Exactly How We'll Work Together</h2>
+                <p>No mystery. No vague "it depends." Here's precisely what happens when you become a client.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-marker">1</div>
+                    <h4>Deep Dive Audit</h4>
+                    <p>I analyse every aspect of your business—financials, marketing, operations, pricing. I find exactly where the money is hiding.</p>
+                    <span class="timeframe">Week 1-2</span>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">2</div>
+                    <h4>Priority Roadmap</h4>
+                    <p>You get a clear plan showing the 3-5 changes that will make the biggest impact. No fluff—just priorities ranked by ROI.</p>
+                    <span class="timeframe">Week 2-3</span>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">3</div>
+                    <h4>Implementation</h4>
+                    <p>We execute together. Weekly calls, direct access, hands-on support. I make sure things actually happen—not just get planned.</p>
+                    <span class="timeframe">Ongoing</span>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">4</div>
+                    <h4>Measure & Scale</h4>
+                    <p>Track results, refine what's working, compound your gains. Build systems that keep delivering long after we finish.</p>
+                    <span class="timeframe">Ongoing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Also Section -->
+    <section class="also-section">
+        <div class="container">
+            <div class="also-header">
+                <span class="section-tag">Additional Services</span>
+                <h2>I Also Invest & Prepare Exits</h2>
+                <p>Beyond growth advisory, I work with select businesses in two additional ways.</p>
+            </div>
+
+            <div class="also-grid">
+                <div class="also-card">
+                    <h3>Direct Investment</h3>
+                    <p>I put my own capital into businesses with strong fundamentals and growth potential. Looking for a partner who understands operations—not just finance?</p>
+                    <ul class="also-features">
+                        <li>Active involvement, not passive capital</li>
+                        <li>Operational expertise alongside funding</li>
+                        <li>Long-term partnership approach</li>
+                        <li>Aligned incentives for growth</li>
+                    </ul>
+                    <a href="pages/connect.html" class="also-link">Discuss Investment →</a>
+                </div>
+
+                <div class="also-card">
+                    <h3>Exit Preparation</h3>
+                    <p>When you're ready to sell, I help maximise your exit value. Growth work naturally positions you for a premium sale—often 2-3x what you'd get otherwise.</p>
+                    <ul class="also-features">
+                        <li>Business valuation & enhancement</li>
+                        <li>Buyer identification & qualification</li>
+                        <li>Negotiation support</li>
+                        <li>Smooth transition planning</li>
+                    </ul>
+                    <a href="pages/connect.html" class="also-link">Plan Your Exit →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="section-tag">Client Results</span>
+                <h2>What Happens When We Work Together</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Quentin showed us we were undercharging by nearly 40%. Within six months of implementing his pricing strategy, we'd added £180K to our annual profit. Same customers, same work—just positioned properly.</p>
+                    <div class="testimonial-result">
+                        <p>+£180K Annual Profit</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Professional Services Firm</h4>
+                        <p>Birmingham, 12 employees</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">We went from £1.2M to £2.4M in 18 months. Quentin rebuilt our entire marketing system and showed us how to actually track what was working. For the first time, we could scale with confidence.</p>
+                    <div class="testimonial-result">
+                        <p>Revenue Doubled in 18 Months</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>E-commerce Business</h4>
+                        <p>Manchester, 8 employees</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-tag">Take Action</span>
+                <h2>Ready to Find the Hidden Profit in Your Business?</h2>
+                <p>Let's start with a conversation. I'll ask about your business, and if I can see clear opportunities to help, I'll tell you exactly what I'd do differently. If I can't help, I'll tell you that too—no games.</p>
+
+                <div class="cta-guarantee">
+                    <h4>My Promise to You</h4>
+                    <p>Every call ends with at least one actionable insight you can implement immediately—whether you work with me or not. Your time won't be wasted.</p>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="pages/connect.html" class="btn-primary">
+                        Book Your Profit Audit
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="pages/valuation-tool.html" class="btn-secondary">Free Business Assessment</a>
+                </div>
+
+                <p class="cta-note">No obligation. No pressure. Just a frank conversation about your business.</p>
+
+                <div class="cta-scarcity">I work with a maximum of 8 clients at any time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Quentin Hunter</a>
+                    <p>Helping small business owners find the hidden profit in their companies. More revenue. Better margins. Real growth.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="pages/story.html">About</a></li>
+                        <li><a href="pages/resources.html">Resources</a></li>
+                        <li><a href="pages/speaking.html">Speaking</a></li>
+                        <li><a href="pages/connect.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="pages/connect.html">Growth Advisory</a></li>
+                        <li><a href="pages/connect.html">Investment</a></li>
+                        <li><a href="pages/connect.html">Exit Preparation</a></li>
+                        <li><a href="pages/valuation-tool.html">Free Assessment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="pages/terms-and-conditions.html">Terms of Service</a></li>
+                        <li><a href="pages/cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/Quentinhunter" target="_blank">Twitter</a>
+                    <a href="https://www.youtube.com/@quentinshunter" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

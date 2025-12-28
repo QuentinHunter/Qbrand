@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quentin Hunter ACMA FRGS | Strategic Advisor | AI, Marketing & Business Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --dark: #252525;
+            --gold: #e6bb00;
+            --gold-light: #f0c820;
+            --gold-dark: #d4a900;
+            --gold-glow: rgba(230, 187, 0, 0.4);
+            --cream: #faf9f6;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --gray-dark: #4b5563;
+            --light-gray: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--white);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-title {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--black) !important;
+            padding: 12px 28px !important;
+            border-radius: 6px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            box-shadow: 0 8px 25px var(--gold-glow);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-nav .nav-cta {
+            background: var(--gold);
+            color: var(--black) !important;
+            padding: 15px 35px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 110px;
+            padding-bottom: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(230, 187, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(230, 187, 0, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-spotlight {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(230, 187, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--gold);
+            box-shadow:
+                0 0 0 1px rgba(230, 187, 0, 0.1),
+                0 0 80px rgba(230, 187, 0, 0.3),
+                0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-statement {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            margin-bottom: 45px;
+            letter-spacing: -0.01em;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .btn-hero {
+            padding: 18px 40px;
+            font-size: 1rem;
+            margin-bottom: 60px;
+        }
+
+        .hero-credentials {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.04em;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+            box-shadow: 0 4px 20px rgba(230, 187, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px var(--gold-glow);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            padding: 16px 28px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 5px;
+        }
+
+        .btn-secondary:hover {
+            color: var(--white);
+            border-color: var(--gold);
+            background: rgba(230, 187, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 45px 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(230, 187, 0, 0.3);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--black);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .service-tagline {
+            color: var(--gold-dark);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .service-tagline em {
+            font-style: italic;
+        }
+
+        .service-card > p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list li::before {
+            content: '→';
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Additional Services Row */
+        .services-secondary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Differentiator Section */
+        .differentiator-section {
+            padding: 120px 0;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .differentiator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(230, 187, 0, 0.3), transparent);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .diff-content h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        .diff-content h2 span {
+            color: var(--gold);
+        }
+
+        .diff-content > p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.85;
+            margin-bottom: 35px;
+        }
+
+        .diff-points {
+            list-style: none;
+        }
+
+        .diff-points li {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .diff-points li:last-child {
+            border-bottom: none;
+        }
+
+        .diff-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(230, 187, 0, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .diff-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .diff-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .diff-text p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .diff-credentials {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 45px;
+        }
+
+        .diff-credentials h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .credential-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .credential-item:hover {
+            border-color: var(--gold);
+            background: rgba(230, 187, 0, 0.05);
+        }
+
+        .credential-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .credential-item p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .experience-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px 30px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .experience-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .experience-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .experience-value span {
+            color: var(--gold-dark);
+        }
+
+        .experience-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 40px;
+            position: relative;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 6rem;
+            color: var(--gold);
+            opacity: 0.15;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            line-height: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-result {
+            display: inline-block;
+            background: rgba(230, 187, 0, 0.15);
+            padding: 10px 18px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-result p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin: 0;
+        }
+
+        .testimonial-author h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 140px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(230, 187, 0, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section > .cta-content > p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 45px;
+            line-height: 1.8;
+        }
+
+        .cta-options {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .cta-note {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 70px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            padding-top: 35px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+
+        /* Large laptops (13-15 inch) */
+        @media (max-width: 1400px) {
+            .hero {
+                padding-top: 90px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-image-wrapper::before {
+                width: 340px;
+                height: 340px;
+            }
+
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        /* Small laptops and tablets landscape */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-image-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-image-wrapper {
+                margin-bottom: 40px;
+            }
+
+            .hero-image-wrapper::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-statement {
+                font-size: 1.15rem;
+            }
+
+            .diff-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .services-grid,
+            .services-secondary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tablets */
+        @media (max-width: 900px) {
+            .services-grid,
+            .services-secondary {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-statement {
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+            }
+
+            .btn-hero {
+                margin-bottom: 50px;
+            }
+
+            .section-header h2,
+            .diff-content h2,
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding-top: 80px;
+                padding-bottom: 60px;
+            }
+
+            .hero-image-wrapper {
+                margin-bottom: 35px;
+            }
+
+            .hero-image-wrapper::before {
+                width: 240px;
+                height: 240px;
+            }
+
+            .hero-image-container {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                margin-bottom: 25px;
+            }
+
+            .hero-statement {
+                font-size: 1rem;
+                margin-bottom: 35px;
+            }
+
+            .btn-hero {
+                padding: 16px 32px;
+                margin-bottom: 45px;
+            }
+
+            .hero-credentials {
+                font-size: 0.7rem;
+                max-width: 300px;
+                line-height: 1.6;
+            }
+
+            .section-header h2,
+            .diff-content h2,
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 14px 24px;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .experience-card {
+                padding: 25px 20px;
+            }
+
+            .experience-value {
+                font-size: 2.2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .cta-options {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .service-card {
+                padding: 35px 25px;
+            }
+
+            .diff-points li {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .diff-icon {
+                margin: 0 auto;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-image-wrapper {
+                margin-bottom: 30px;
+            }
+
+            .hero-image-wrapper::before {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-image-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-statement {
+                font-size: 0.9rem;
+                margin-bottom: 30px;
+            }
+
+            .btn-hero {
+                padding: 14px 28px;
+                font-size: 0.9rem;
+                margin-bottom: 40px;
+            }
+
+            .hero-credentials {
+                font-size: 0.6rem;
+            }
+
+            .section-header h2,
+            .diff-content h2,
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-name">Quentin Hunter</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Let's Talk</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="openMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" onclick="closeMobileNav()">&times;</button>
+        <a href="#services" onclick="closeMobileNav()">Services</a>
+        <a href="#about" onclick="closeMobileNav()">About</a>
+        <a href="pages/resources.html">Resources</a>
+        <a href="pages/connect.html" class="nav-cta">Let's Talk</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-spotlight">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                    </div>
+                </div>
+
+                <h1>Growth Is Not an Accident. <span class="gold">It's a System.</span></h1>
+
+                <p class="hero-statement">I help business owners build the systems that make growth repeatable, predictable and profitable.</p>
+
+                <a href="pages/connect.html" class="btn-primary btn-hero">
+                    Build Your System
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+
+                <p class="hero-credentials">Qualified Marketer · AI Certified · Chartered Management Accountant · NED · Investor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How I Help</span>
+                <h2>The Growth Architecture</h2>
+                <p>Six systems. One outcome: a business that scales without you. Most founders hit a ceiling because they're missing infrastructure, not effort. Here's what I build with business owners ready to break through.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+                    </div>
+                    <h3>Marketing Strategy</h3>
+                    <p class="service-tagline"><em>The engine that fills your pipeline.</em></p>
+                    <p>Random tactics burn cash. Systems compound. I design marketing infrastructure that brings qualified buyers to you predictably — built on frameworks proven across hundreds of businesses and three decades of what actually converts.</p>
+                    <ul class="service-list">
+                        <li>Acquisition systems that run without you</li>
+                        <li>Funnels engineered to compound</li>
+                        <li>Positioning that repels the wrong buyers</li>
+                        <li>Metrics that expose the truth</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                    </div>
+                    <h3>AI & Automation</h3>
+                    <p class="service-tagline"><em>The multiplier that scales without headcount.</em></p>
+                    <p>Every hour your team spends on repeatable work is an hour stolen from growth. I build AI agents and automation systems that handle what humans shouldn't — freeing your people for the work that actually moves the needle.</p>
+                    <ul class="service-list">
+                        <li>AI agents running in production (not experiments)</li>
+                        <li>Workflows that scale with volume</li>
+                        <li>Systems that learn and improve</li>
+                        <li>Integration with your existing stack</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3>Growth Strategy</h3>
+                    <p class="service-tagline"><em>The roadmap that doesn't gather dust.</em></p>
+                    <p>Tactics without direction is expensive chaos. I help you define where you're going and align your marketing, operations, and team around getting there — with clear priorities that survive contact with reality.</p>
+                    <ul class="service-list">
+                        <li>Strategic clarity for the next phase</li>
+                        <li>Focus that eliminates noise</li>
+                        <li>Roadmaps your team actually follows</li>
+                        <li>Exit planning when the time is right</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services-secondary">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Fractional CMO</h3>
+                    <p class="service-tagline"><em>The leadership without the overhead.</em></p>
+                    <p>You need marketing leadership, not another full-time salary. I embed with your team a few days a month — building systems, developing capability, and keeping momentum when you can't afford to stall.</p>
+                    <ul class="service-list">
+                        <li>Part-time presence, full-time accountability</li>
+                        <li>Team capability that compounds</li>
+                        <li>Agency and vendor oversight</li>
+                        <li>Continuity through growth stages</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Non-Executive Director</h3>
+                    <p class="service-tagline"><em>The challenge that keeps you honest.</em></p>
+                    <p>Governance isn't bureaucracy — it's protection. As you scale, you need someone on the board who understands growth but asks uncomfortable questions. Formally qualified. Operationally experienced. Invested in the outcome.</p>
+                    <ul class="service-list">
+                        <li>Independent strategic challenge</li>
+                        <li>Governance that scales with you</li>
+                        <li>Risk awareness without paralysis</li>
+                        <li>Board experience that earns its seat</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Investment</h3>
+                    <p class="service-tagline"><em>The capital that comes with capability.</em></p>
+                    <p>For the right business, I put money alongside time. Not passive capital waiting for returns — active partnership building the systems that drive growth. If you've got the fundamentals and need fuel plus expertise, let's talk.</p>
+                    <ul class="service-list">
+                        <li>Capital with hands-on involvement</li>
+                        <li>Growth systems built together</li>
+                        <li>Incentives fully aligned</li>
+                        <li>Long-term partnership, not a transaction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiator Section -->
+    <section class="differentiator-section" id="about">
+        <div class="container">
+            <div class="diff-grid">
+                <div class="diff-content">
+                    <span class="section-tag">Why Work With Me</span>
+                    <h2>Systems Thinking <span>Changes Everything</span></h2>
+                    <p>Most advisors fix one piece and leave. Your marketing gets better but your operations can't keep up. Your automation works but nobody measures if it's profitable. The pieces don't connect.</p>
+                    <p>I think in systems. How marketing connects to operations. How automation connects to strategy. How all of it shows up in your numbers. That's how you build something that scales smoothly instead of breaking under pressure.</p>
+
+                    <ul class="diff-points">
+                        <li>
+                            <div class="diff-icon">
+                                <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+                            </div>
+                            <div class="diff-text">
+                                <h4>Proven Marketing Frameworks</h4>
+                                <p>DigitalMarketer Certified Partner. I use frameworks that have been tested across thousands of businesses. Customer acquisition systems, conversion optimisation, growth loops. No reinventing wheels.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="diff-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83"/></svg>
+                            </div>
+                            <div class="diff-text">
+                                <h4>Automation That Multiplies</h4>
+                                <p>MindStudio Qualified AI Agent Developer. I build systems using Claude, GPT-4, Gemini, and Llama that handle real work. Automation that grows your capacity without growing your headcount.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="diff-icon">
+                                <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div class="diff-text">
+                                <h4>Metrics That Matter</h4>
+                                <p>Thirty years of understanding the numbers behind growth. I know which metrics predict success and which just look good in reports. Every system I build includes the measurement to prove it's working.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="diff-icon">
+                                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <div class="diff-text">
+                                <h4>Strategy That Scales</h4>
+                                <p>From FTSE 100 boardrooms to growing SMEs, I've seen what works at every stage. NED qualified through the Institute of Board Members. Experience building systems that hold up as businesses get bigger.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="diff-credentials">
+                    <h3>The Foundation</h3>
+                    <div class="credentials-grid">
+                        <div class="credential-item">
+                            <h4>DigitalMarketer</h4>
+                            <p>Certified Partner & Qualified Marketer</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>AI Agent Developer</h4>
+                            <p>MindStudio Certified</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>ACMA</h4>
+                            <p>Chartered Management Accountant</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>NED Qualified</h4>
+                            <p>Institute of Board Members</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>M&A Specialist</h4>
+                            <p>Scalable Company & Deal Makers Academy</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>FRGS</h4>
+                            <p>Fellow, Royal Geographical Society</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>Trustee</h4>
+                            <p>The Stationers' Foundation</p>
+                        </div>
+                        <div class="credential-item">
+                            <h4>Liveryman</h4>
+                            <p>Stationers' Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Track Record</span>
+                <h2>Thirty Years of Building What Works</h2>
+                <p>Systems get tested over time. These are the places where I learned what holds up and what breaks. From global corporations to owner-managed businesses, the patterns repeat.</p>
+            </div>
+
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-value">30<span>+</span></div>
+                    <div class="experience-label">Years building growth systems across industries</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-value">5<span>+</span></div>
+                    <div class="experience-label">Board roles overseeing strategy and growth</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-value">GSK</div>
+                    <div class="experience-label">FTSE 100 systems and processes</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-value">TBWA</div>
+                    <div class="experience-label">Global agency, Omnicom network</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board Experience Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Current Roles</span>
+                <h2>Where I'm Applying This Now</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Helping the Foundation build better systems for fund allocation and impact measurement. Governance that actually works: reviewing strategy, challenging assumptions, making decisions that affect thousands of beneficiaries across the communications sector.</p>
+                    <div class="testimonial-result">
+                        <p>2025 to Present</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Trustee</h4>
+                        <p>The Stationers' Foundation</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Shaping the content strategy for the largest digital marketing conference in the US. Selecting speakers, curating sessions, making sure attendees leave with frameworks they can actually use. It keeps me connected to what's working right now.</p>
+                    <div class="testimonial-result">
+                        <p>2023 to Present</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Content Advisory Board</h4>
+                        <p>Traffic & Conversion Summit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-tag">Next Step</span>
+                <h2>Ready to Build Your System?</h2>
+                <p>Every growth system starts with a conversation. What's working. What isn't. Where the biggest opportunities are hiding. Book a call and we'll map out what a scalable system looks like for your business.</p>
+
+                <div class="cta-options">
+                    <a href="pages/connect.html" class="btn-primary">
+                        Book a Call
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+                </div>
+
+                <p class="cta-note">No obligation. Just clarity on what it would take to scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-name">Quentin Hunter</span>
+                    </a>
+                    <p>Helping business owners build systems that scale. Marketing strategy, automation, AI, and the thinking that connects them all.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">AI Consulting</a></li>
+                        <li><a href="#services">Marketing Strategy</a></li>
+                        <li><a href="#services">Fractional CMO</a></li>
+                        <li><a href="#services">NED Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="pages/resources.html">Resources</a></li>
+                        <li><a href="pages/connect.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="pages/terms-and-conditions.html">Terms of Service</a></li>
+                        <li><a href="pages/cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/Quentinhunter" target="_blank">Twitter</a>
+                    <a href="https://www.youtube.com/@quentinshunter" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile navigation
+        function openMobileNav() {
+            document.getElementById('mobileNav').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

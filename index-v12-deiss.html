@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customer Value Optimization | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-50: #f1f5f9;
+            --gray-100: #e2e8f0;
+            --gray-200: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --blue-500: #3b82f6;
+            --blue-600: #2563eb;
+            --blue-700: #1d4ed8;
+            --green-500: #22c55e;
+            --orange-500: #f97316;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            background: var(--white);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--gray-900);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 18px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-600);
+        }
+
+        .nav-cta {
+            background: var(--blue-600) !important;
+            color: var(--white) !important;
+            padding: 12px 24px !important;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: all 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--blue-700) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Hero - Ryan Deiss CVO Style */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 540px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue-600);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--blue-600);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--blue-600);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-700);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 16px 20px;
+            transition: color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--blue-600);
+        }
+
+        .hero-proof {
+            display: flex;
+            gap: 30px;
+        }
+
+        .proof-stat {
+            text-align: left;
+        }
+
+        .proof-stat strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .proof-stat span {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 380px;
+            height: 380px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+
+        /* Customer Journey Section */
+        .journey-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .journey-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--blue-600);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+
+        .journey-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .journey-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .journey-stages {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .journey-stages::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 60px;
+            right: 60px;
+            height: 3px;
+            background: var(--gray-100);
+        }
+
+        .stage {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .stage-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--white);
+            border: 3px solid var(--blue-600);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blue-600);
+        }
+
+        .stage h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .stage p {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            max-width: 140px;
+            margin: 0 auto;
+        }
+
+        /* Before/After Section */
+        .transform-section {
+            padding: 100px 0;
+            background: var(--off-white);
+        }
+
+        .transform-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .transform-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .transform-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .transform-col {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .transform-col.before {
+            border-top: 4px solid var(--gray-400);
+        }
+
+        .transform-col.after {
+            border-top: 4px solid var(--green-500);
+        }
+
+        .transform-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .transform-col.before h3 {
+            color: var(--gray-600);
+        }
+
+        .transform-col.after h3 {
+            color: var(--green-500);
+        }
+
+        .transform-col ul {
+            list-style: none;
+        }
+
+        .transform-col li {
+            padding: 12px 0;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .transform-col li:last-child {
+            border-bottom: none;
+        }
+
+        .transform-col.before li::before {
+            content: '✕';
+            color: var(--gray-400);
+            font-weight: 700;
+        }
+
+        .transform-col.after li::before {
+            content: '✓';
+            color: var(--green-500);
+            font-weight: 700;
+        }
+
+        .transform-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .transform-arrow svg {
+            width: 40px;
+            height: 40px;
+            color: var(--blue-600);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--blue-600);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--blue-600);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Credentials Bar */
+        .creds-section {
+            padding: 40px 0;
+            background: var(--gray-900);
+        }
+
+        .creds-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cred-item {
+            text-align: center;
+        }
+
+        .cred-item span {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .cred-item p {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .final-cta > .container > p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 550px;
+            margin: 0 auto 40px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--blue-700);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .final-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .final-cta-note {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--gray-900);
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .hero-proof {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .journey-stages {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .journey-stages::before {
+                display: none;
+            }
+
+            .transform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .transform-arrow {
+                transform: rotate(90deg);
+                padding: 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-proof {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .creds-grid {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#journey">The Journey</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Customer Value Optimization</span>
+                <h1>Increase Customer Value at <span>Every Stage</span></h1>
+                <p class="hero-sub">Stop leaving money on the table. I help businesses optimize the entire customer journey—from first click to loyal advocate—using proven frameworks tested across hundreds of companies.</p>
+                <div class="hero-cta-group">
+                    <a href="pages/connect.html" class="btn-primary">
+                        Start Optimizing
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#journey" class="btn-secondary">
+                        See the Framework
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                </div>
+                <div class="hero-proof">
+                    <div class="proof-stat">
+                        <strong>30+</strong>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="proof-stat">
+                        <strong>200%</strong>
+                        <span>Avg. Lead Increase</span>
+                    </div>
+                    <div class="proof-stat">
+                        <strong>40%</strong>
+                        <span>Time Saved</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Journey Section -->
+    <section class="journey-section" id="journey">
+        <div class="container">
+            <div class="journey-header">
+                <span class="section-label">The Customer Value Journey</span>
+                <h2>Optimize Every Stage of Growth</h2>
+                <p>Most businesses focus on acquisition alone. Real growth comes from optimizing the entire customer journey.</p>
+            </div>
+            <div class="journey-stages">
+                <div class="stage">
+                    <div class="stage-icon">1</div>
+                    <h3>Aware</h3>
+                    <p>They know you exist</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">2</div>
+                    <h3>Engage</h3>
+                    <p>They interact with content</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">3</div>
+                    <h3>Subscribe</h3>
+                    <p>They give permission</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">4</div>
+                    <h3>Convert</h3>
+                    <p>They become customers</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">5</div>
+                    <h3>Excite</h3>
+                    <p>They experience value</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">6</div>
+                    <h3>Ascend</h3>
+                    <p>They buy more</p>
+                </div>
+                <div class="stage">
+                    <div class="stage-icon">7</div>
+                    <h3>Advocate</h3>
+                    <p>They refer others</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="transform-section">
+        <div class="container">
+            <div class="transform-header">
+                <span class="section-label">The Transformation</span>
+                <h2>Before & After Working Together</h2>
+            </div>
+            <div class="transform-grid">
+                <div class="transform-col before">
+                    <h3>Before</h3>
+                    <ul>
+                        <li>Marketing feels like guesswork</li>
+                        <li>Customer acquisition costs rising</li>
+                        <li>Low repeat purchase rates</li>
+                        <li>No clear customer journey mapped</li>
+                        <li>Revenue plateaus despite effort</li>
+                        <li>You're the bottleneck for growth</li>
+                    </ul>
+                </div>
+                <div class="transform-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="transform-col after">
+                    <h3>After</h3>
+                    <ul>
+                        <li>Data-driven marketing decisions</li>
+                        <li>Predictable customer acquisition</li>
+                        <li>Maximized customer lifetime value</li>
+                        <li>Optimized journey at every stage</li>
+                        <li>Compounding growth systems</li>
+                        <li>Business runs without you</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-label">How I Help</span>
+                <h2>Services That Drive Growth</h2>
+                <p>Six interconnected systems that optimize customer value at every stage of the journey.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">M</div>
+                    <h3>Marketing Systems</h3>
+                    <p>Acquisition frameworks that bring qualified buyers predictably and profitably.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">A</div>
+                    <h3>AI & Automation</h3>
+                    <p>Scale your operations without scaling headcount using production-ready AI systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">S</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Clear roadmaps with priorities your team can actually execute.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">D</div>
+                    <h3>Data & Analytics</h3>
+                    <p>Measurement systems that reveal what's actually working.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">L</div>
+                    <h3>Leadership</h3>
+                    <p>Fractional CMO or NED access without full-time cost.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">O</div>
+                    <h3>Optimization</h3>
+                    <p>Continuous improvement across every customer touchpoint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="creds-section">
+        <div class="container">
+            <div class="creds-grid">
+                <div class="cred-item">
+                    <span>ACMA</span>
+                    <p>Chartered Accountant</p>
+                </div>
+                <div class="cred-item">
+                    <span>DigitalMarketer</span>
+                    <p>Certified Partner</p>
+                </div>
+                <div class="cred-item">
+                    <span>AI Developer</span>
+                    <p>MindStudio Certified</p>
+                </div>
+                <div class="cred-item">
+                    <span>NED Qualified</span>
+                    <p>Board Experience</p>
+                </div>
+                <div class="cred-item">
+                    <span>GSK + TBWA</span>
+                    <p>Corporate Alumni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Optimize Your Customer Journey?</h2>
+            <p>Let's map out your customer value journey and identify the biggest opportunities for growth.</p>
+            <a href="pages/connect.html" class="final-cta-btn">
+                Schedule a Strategy Call
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="final-cta-note">Free strategy session. No obligation.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

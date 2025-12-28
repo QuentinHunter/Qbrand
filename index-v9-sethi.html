@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Rich Business Owner's Guide to Systematic Growth | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --teal: #0d9488;
+            --teal-dark: #0f766e;
+            --teal-light: #14b8a6;
+            --navy: #1e293b;
+            --navy-light: #334155;
+            --white: #ffffff;
+            --cream: #fefce8;
+            --gray-100: #f1f5f9;
+            --gray-300: #cbd5e1;
+            --gray-500: #64748b;
+            --gray-700: #334155;
+            --gray-900: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.7;
+            background: var(--white);
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .container-wide {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        nav .container-wide {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-500);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            background: var(--teal) !important;
+            color: var(--white) !important;
+            padding: 10px 24px !important;
+            border-radius: 6px;
+        }
+
+        .nav-cta:hover {
+            background: var(--teal-dark) !important;
+        }
+
+        /* Hero - Ramit Style */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--teal);
+        }
+
+        .hero-sub {
+            font-size: 1.3rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--teal);
+            color: var(--white);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Long-form Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--navy);
+        }
+
+        .content-section p {
+            margin-bottom: 25px;
+            color: var(--gray-700);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-section p strong {
+            color: var(--navy);
+        }
+
+        .highlight-box {
+            background: var(--cream);
+            border-left: 4px solid var(--teal);
+            padding: 25px 30px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        /* About Section with Photo */
+        .about-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
+
+        .about-content p {
+            color: var(--gray-700);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .credentials-list {
+            margin-top: 25px;
+            list-style: none;
+        }
+
+        .credentials-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            color: var(--gray-700);
+        }
+
+        .credentials-list li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        /* Premium Offer Section */
+        .offer-section {
+            padding: 80px 0;
+        }
+
+        .offer-section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .offer-section > .container-wide > p {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        .offer-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .offer-card {
+            background: var(--white);
+            border: 2px solid var(--gray-100);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+        }
+
+        .offer-card:hover {
+            border-color: var(--teal);
+            box-shadow: 0 10px 40px rgba(13, 148, 136, 0.1);
+        }
+
+        .offer-card.featured {
+            border-color: var(--teal);
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+
+        .offer-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .offer-card h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+        }
+
+        .offer-card h4 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .offer-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .offer-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .offer-card ul li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .offer-card ul li::before {
+            content: '→';
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .offer-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .offer-btn:hover {
+            background: var(--navy-light);
+        }
+
+        .offer-card.featured .offer-btn {
+            background: var(--teal);
+        }
+
+        .offer-card.featured .offer-btn:hover {
+            background: var(--teal-dark);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--navy);
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 15px;
+        }
+
+        .faq-item h3 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .faq-item p {
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section > .container > p {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+            max-width: 550px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--teal);
+            color: var(--white);
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--gray-900);
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .offer-cards {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .content-section h2,
+            .offer-section h2,
+            .faq-section h2,
+            .cta-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container-wide">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Work With Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Stop working harder. <span>Build systems</span> that work for you.</h1>
+                <p class="hero-sub">The difference between struggling business owners and wealthy ones isn't luck or talent. It's infrastructure. Here's how to build yours.</p>
+                <a href="pages/connect.html" class="hero-cta">
+                    Let's build your system
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Long-form Content -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Here's the uncomfortable truth about growth</h2>
+            <p>Most business owners are working harder every year while their income stays flat. They've tried everything: agencies, courses, hiring, ads. Nothing seems to stick.</p>
+            <p>Meanwhile, a small percentage of business owners seem to have figured something out. They work less, earn more, and their businesses grow even when they take time off.</p>
+            <p><strong>What's the difference?</strong></p>
+            <p>It's not intelligence. It's not luck. It's not even the market they're in.</p>
+
+            <div class="highlight-box">
+                <p>The difference is systems. Specifically: infrastructure that makes growth predictable, measurable, and repeatable without requiring the owner to be involved in every decision.</p>
+            </div>
+
+            <p>I've spent 30 years studying this pattern. Working inside FTSE 100 corporations like GSK. Leading marketing at global agencies like TBWA. Building systems for owner-managed businesses. Sitting on boards. Investing my own capital.</p>
+            <p>And I've identified exactly what separates the businesses that scale from the ones that stay stuck.</p>
+            <p>It comes down to six systems. When all six work together, growth becomes inevitable. When any are missing, you hit a ceiling that no amount of hustle will break through.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container-wide">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                </div>
+                <div class="about-content">
+                    <h2>I'm Quentin Hunter.</h2>
+                    <p>I help business owners build the systems that make growth repeatable. Not through more tactics or harder work—through infrastructure that compounds.</p>
+                    <p>My background is unusual: I'm a Chartered Accountant who became a marketing expert who became an AI developer. That means I see the full picture that most specialists miss.</p>
+                    <ul class="credentials-list">
+                        <li>ACMA Chartered Management Accountant</li>
+                        <li>DigitalMarketer Certified Partner</li>
+                        <li>MindStudio AI Agent Developer</li>
+                        <li>NED Qualified (Institute of Board Members)</li>
+                        <li>30+ years building growth systems</li>
+                        <li>Former GSK and TBWA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer-section" id="services">
+        <div class="container-wide">
+            <h2>How we can work together</h2>
+            <p>Choose the level of partnership that fits your situation.</p>
+            <div class="offer-cards">
+                <div class="offer-card">
+                    <h3>Strategy</h3>
+                    <h4>Growth System Design</h4>
+                    <p>A complete roadmap for building the systems your business needs.</p>
+                    <ul>
+                        <li>Full diagnostic assessment</li>
+                        <li>Custom system architecture</li>
+                        <li>Implementation roadmap</li>
+                        <li>Measurement framework</li>
+                    </ul>
+                    <a href="pages/connect.html" class="offer-btn">Learn More</a>
+                </div>
+                <div class="offer-card featured">
+                    <h3>Partnership</h3>
+                    <h4>Fractional CMO</h4>
+                    <p>Ongoing leadership to build and optimise your growth systems.</p>
+                    <ul>
+                        <li>Everything in Strategy</li>
+                        <li>Monthly embedded support</li>
+                        <li>Team capability building</li>
+                        <li>Agency/vendor oversight</li>
+                        <li>Continuous optimisation</li>
+                    </ul>
+                    <a href="pages/connect.html" class="offer-btn">Learn More</a>
+                </div>
+                <div class="offer-card">
+                    <h3>Governance</h3>
+                    <h4>Board Advisory</h4>
+                    <p>Strategic challenge and governance as your business scales.</p>
+                    <ul>
+                        <li>NED or advisory role</li>
+                        <li>Strategic oversight</li>
+                        <li>Investment consideration</li>
+                        <li>Exit planning support</li>
+                    </ul>
+                    <a href="pages/connect.html" class="offer-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Common questions</h2>
+            <div class="faq-item">
+                <h3>How is this different from other consultants?</h3>
+                <p>Most consultants specialise in one area: marketing OR finance OR technology. I work across all three because real growth problems don't respect neat categories. The result is integrated systems, not siloed advice.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What kind of businesses do you work with?</h3>
+                <p>Typically owner-managed businesses that have proven product-market fit and are ready to scale. You've already built something—now you need infrastructure to take it further.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long until I see results?</h3>
+                <p>Most clients see measurable improvements within 90 days. Full system implementation typically takes 6-12 months, but the systems continue compounding long after.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to build your system?</h2>
+            <p>Book a call. We'll discuss where you are, where you want to be, and whether working together makes sense.</p>
+            <a href="pages/connect.html" class="cta-btn">
+                Schedule your call
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-wide">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

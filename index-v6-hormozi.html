@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The $100M Growth System | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --black: #000000;
+            --dark: #0a0a0a;
+            --gray-dark: #171717;
+            --gray: #262626;
+            --gray-light: #404040;
+            --white: #ffffff;
+            --lime: #84cc16;
+            --lime-bright: #a3e635;
+            --lime-glow: rgba(132, 204, 22, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--white);
+            line-height: 1.6;
+            background: var(--black);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: var(--black);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+
+        .nav-cta {
+            background: var(--lime) !important;
+            color: var(--black) !important;
+            padding: 12px 24px !important;
+            border-radius: 8px;
+            font-weight: 700 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--lime-bright) !important;
+        }
+
+        /* Hero - Hormozi Style */
+        .hero {
+            padding: 100px 0 120px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--gray);
+            color: var(--lime);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 span {
+            color: var(--lime);
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--lime);
+            color: var(--black);
+            padding: 20px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 0 40px var(--lime-glow);
+        }
+
+        .hero-cta:hover {
+            background: var(--lime-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 0 60px var(--lime-glow);
+        }
+
+        .hero-proof {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-item span {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .proof-item p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+        }
+
+        /* Value Stack Section - Hormozi's Signature */
+        .value-section {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .value-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .value-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .value-header h2 span {
+            color: var(--lime);
+        }
+
+        .value-header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .value-stack {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .value-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            padding: 35px;
+            background: var(--gray-dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .value-item:hover {
+            border-color: var(--lime);
+        }
+
+        .value-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .value-content p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .value-price {
+            text-align: right;
+        }
+
+        .value-price .label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .value-price .amount {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--lime);
+        }
+
+        .value-total {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--gray) 100%);
+            border: 2px solid var(--lime);
+            border-radius: 16px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .value-total h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .value-total .total-amount {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--lime);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 0;
+            background: var(--black);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .problem-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        .problem-content h2 span {
+            color: var(--lime);
+        }
+
+        .problem-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .problem-list li::before {
+            content: '→';
+            color: var(--lime);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .problem-image {
+            text-align: center;
+        }
+
+        .problem-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--lime);
+            box-shadow: 0 0 60px var(--lime-glow);
+        }
+
+        /* Credentials */
+        .creds-section {
+            padding: 60px 0;
+            background: var(--gray-dark);
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .creds-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cred-item {
+            text-align: center;
+        }
+
+        .cred-item span {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .cred-item p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--black) 100%);
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .final-cta h2 span {
+            color: var(--lime);
+        }
+
+        .final-cta > .container > p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--lime);
+            color: var(--black);
+            padding: 25px 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 0 50px var(--lime-glow);
+        }
+
+        .final-cta-btn:hover {
+            background: var(--lime-bright);
+            transform: translateY(-4px);
+            box-shadow: 0 0 80px var(--lime-glow);
+        }
+
+        .final-cta-note {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--black);
+            border-top: 1px solid var(--gray);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .problem-image {
+                order: -1;
+            }
+
+            .value-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .value-price {
+                text-align: center;
+            }
+
+            .value-total {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-proof {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .creds-grid {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#value">What You Get</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-label">The Growth System</span>
+            <h1>Stop Trading Time For <span>Money</span></h1>
+            <p class="hero-sub">I build systems that make your business grow without you working more hours. 30 years of proof. Zero fluff.</p>
+            <a href="pages/connect.html" class="hero-cta">
+                Build Your System
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="hero-proof">
+                <div class="proof-item">
+                    <span>30+</span>
+                    <p>Years Building Systems</p>
+                </div>
+                <div class="proof-item">
+                    <span>200%</span>
+                    <p>Average Lead Increase</p>
+                </div>
+                <div class="proof-item">
+                    <span>40%</span>
+                    <p>Time Saved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Stack Section -->
+    <section class="value-section" id="value">
+        <div class="container">
+            <div class="value-header">
+                <h2>Here's Everything <span>You Get</span></h2>
+                <p>Six systems that compound. Each one designed to increase your business value.</p>
+            </div>
+            <div class="value-stack">
+                <div class="value-item">
+                    <div class="value-content">
+                        <h3>Marketing System</h3>
+                        <p>Acquisition systems that bring qualified buyers predictably. Frameworks tested across hundreds of businesses.</p>
+                    </div>
+                    <div class="value-price">
+                        <p class="label">Value</p>
+                        <p class="amount">£25,000</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-content">
+                        <h3>AI & Automation Layer</h3>
+                        <p>Production-ready AI agents that handle what humans shouldn't. Scale without headcount.</p>
+                    </div>
+                    <div class="value-price">
+                        <p class="label">Value</p>
+                        <p class="amount">£30,000</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-content">
+                        <h3>Growth Strategy</h3>
+                        <p>Clear roadmap with priorities that survive reality. Your team aligned around execution.</p>
+                    </div>
+                    <div class="value-price">
+                        <p class="label">Value</p>
+                        <p class="amount">£15,000</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-content">
+                        <h3>Measurement System</h3>
+                        <p>Know exactly what's working. Metrics that reveal truth, not vanity.</p>
+                    </div>
+                    <div class="value-price">
+                        <p class="label">Value</p>
+                        <p class="amount">£10,000</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-content">
+                        <h3>Fractional Leadership</h3>
+                        <p>CMO or NED access without full-time cost. Experienced guidance when you need it.</p>
+                    </div>
+                    <div class="value-price">
+                        <p class="label">Value</p>
+                        <p class="amount">£50,000</p>
+                    </div>
+                </div>
+                <div class="value-total">
+                    <div>
+                        <h3>Total Value You Get</h3>
+                    </div>
+                    <div class="total-amount">£130,000+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="about">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <h2>Most Business Owners Are <span>Stuck</span></h2>
+                    <p>They work more hours. Hire more people. Spend more on ads. Revenue stays flat. Why?</p>
+                    <p>Because they're missing infrastructure. Without systems, every hour of effort produces diminishing returns.</p>
+                    <ul class="problem-list">
+                        <li>You're the bottleneck for every decision</li>
+                        <li>Marketing feels like gambling</li>
+                        <li>Growth requires proportional effort</li>
+                        <li>Taking time off means revenue drops</li>
+                    </ul>
+                    <p style="margin-top: 30px;"><strong style="color: var(--lime);">The fix:</strong> Build systems that compound. That's what I do.</p>
+                </div>
+                <div class="problem-image">
+                    <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="creds-section">
+        <div class="container">
+            <div class="creds-grid">
+                <div class="cred-item">
+                    <span>ACMA</span>
+                    <p>Chartered Accountant</p>
+                </div>
+                <div class="cred-item">
+                    <span>DigitalMarketer</span>
+                    <p>Certified Partner</p>
+                </div>
+                <div class="cred-item">
+                    <span>AI Developer</span>
+                    <p>MindStudio Certified</p>
+                </div>
+                <div class="cred-item">
+                    <span>NED Qualified</span>
+                    <p>Board Experience</p>
+                </div>
+                <div class="cred-item">
+                    <span>GSK + TBWA</span>
+                    <p>Corporate Alumni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Build <span>Your System?</span></h2>
+            <p>Book a call. We'll map out exactly what's holding your growth back and what systems would fix it.</p>
+            <a href="pages/connect.html" class="final-cta-btn">
+                Let's Talk
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="final-cta-note">No obligation. Just clarity.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

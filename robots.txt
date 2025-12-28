@@ -1,0 +1,12 @@
+# Robots.txt for quentinhunter.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://quentinhunter.com/sitemap.xml
+
+# Disallow legal pages from being crawled (already noindexed)
+Disallow: /pages/cookie-policy.html
+Disallow: /pages/privacy-policy.html
+Disallow: /pages/terms-and-conditions.html

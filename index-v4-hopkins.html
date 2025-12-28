@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How Business Owners Are Getting 3x More Leads Without 3x More Effort | Proven System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f9fafb;
+            --light-gray: #f3f4f6;
+            --mid-gray: #9ca3af;
+            --dark-gray: #4b5563;
+            --charcoal: #1f2937;
+            --blue: #1d4ed8;
+            --blue-dark: #1e40af;
+            --blue-light: #3b82f6;
+            --green: #059669;
+            --green-bg: #ecfdf5;
+            --yellow: #fbbf24;
+            --yellow-bg: #fffbeb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--white);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Top Bar - Urgency Element */
+        .top-bar {
+            background: var(--blue);
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .top-bar p {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .top-bar strong {
+            color: var(--yellow);
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: var(--white);
+            border-bottom: 2px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-cta {
+            background: var(--blue) !important;
+            color: var(--white) !important;
+            padding: 10px 20px !important;
+            border-radius: 6px;
+        }
+
+        .nav-cta:hover {
+            background: var(--blue-dark) !important;
+        }
+
+        /* Hero - Hopkins "Specific Claim" Style */
+        .hero {
+            padding: 70px 0 80px;
+            background: var(--off-white);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-proof-box {
+            background: var(--green-bg);
+            border: 2px solid var(--green);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 30px;
+        }
+
+        .hero-proof-box h4 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+
+        .hero-proof-box p {
+            color: var(--charcoal);
+            font-size: 1rem;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .hero-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        .hero-bullets li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--blue);
+            color: var(--white);
+            padding: 16px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
+
+        .hero-sidebar {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .hero-sidebar img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-credentials {
+            list-style: none;
+        }
+
+        .sidebar-credentials li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-credentials li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-credentials li::before {
+            content: '●';
+            color: var(--blue);
+            font-size: 0.6rem;
+        }
+
+        /* Stats Section - Hopkins loved numbers */
+        .stats-section {
+            padding: 50px 0;
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Reason Why Section */
+        .reason-section {
+            padding: 80px 0;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .reason-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .reason-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .reason-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .reason-card {
+            background: var(--off-white);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .reason-card.highlight {
+            background: var(--yellow-bg);
+            border-color: var(--yellow);
+        }
+
+        .reason-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--blue);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .reason-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+
+        .reason-card p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Services with Specific Outcomes */
+        .services-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            border-color: var(--blue);
+            box-shadow: 0 5px 20px rgba(29, 78, 216, 0.1);
+        }
+
+        .service-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--charcoal);
+        }
+
+        .service-item p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .service-outcome {
+            display: inline-block;
+            background: var(--green-bg);
+            color: var(--green);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Guarantee Section - Hopkins Style */
+        .guarantee-section {
+            padding: 60px 0;
+            background: var(--white);
+            border-top: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .guarantee-box {
+            background: var(--yellow-bg);
+            border: 3px solid var(--yellow);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .guarantee-box p {
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .final-cta > .container > p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 550px;
+            margin: 0 auto 35px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow);
+            color: var(--charcoal);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .final-cta-btn:hover {
+            background: #fcd34d;
+            transform: translateY(-2px);
+        }
+
+        .final-cta-note {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Limited Spots Notice */
+        .spots-notice {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--off-white);
+            border-top: 2px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .footer-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-sidebar {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reason-grid,
+            .service-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .reason-header h2,
+            .services-header h2,
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <p><strong>Limited Availability:</strong> Currently accepting 3 new advisory clients per quarter</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why It Works</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>How Business Owners Are Getting <span>3x More Leads</span> Without 3x More Effort</h1>
+                    <p class="hero-sub">A proven system that makes growth predictable, repeatable, and measurable — based on 30 years of testing across hundreds of businesses.</p>
+
+                    <div class="hero-proof-box">
+                        <h4>Verified Results</h4>
+                        <p>Businesses using this system report average lead flow increases of 200-300% within 6 months, with measurable ROI on every initiative.</p>
+                    </div>
+
+                    <ul class="hero-bullets">
+                        <li>Get customers coming to you predictably (not randomly)</li>
+                        <li>Free 10+ hours/week through intelligent automation</li>
+                        <li>Know exactly which activities drive revenue</li>
+                        <li>Scale without becoming the bottleneck</li>
+                    </ul>
+
+                    <a href="pages/connect.html" class="hero-cta">
+                        See If You Qualify
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="hero-sidebar">
+                    <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                    <ul class="sidebar-credentials">
+                        <li>30+ Years Building Growth Systems</li>
+                        <li>DigitalMarketer Certified Partner</li>
+                        <li>ACMA Chartered Accountant</li>
+                        <li>MindStudio AI Developer</li>
+                        <li>NED Qualified (Institute of Board Members)</li>
+                        <li>Former GSK & TBWA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Years of Tested Systems</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200%</h3>
+                    <p>Average Lead Flow Increase</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40%</h3>
+                    <p>Time Saved via Automation</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Board Positions Held</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reason Why Section -->
+    <section class="reason-section" id="why">
+        <div class="container">
+            <div class="reason-header">
+                <h2>Why This System Works When Others Don't</h2>
+                <p>Most growth advice fails because it addresses symptoms, not causes. Here's the difference.</p>
+            </div>
+            <div class="reason-grid">
+                <div class="reason-card">
+                    <div class="reason-number">1</div>
+                    <h3>It's Based on Testing, Not Theory</h3>
+                    <p>Every framework has been validated across hundreds of businesses over three decades. We know what works because we've measured it thousands of times.</p>
+                </div>
+                <div class="reason-card highlight">
+                    <div class="reason-number">2</div>
+                    <h3>It Integrates Four Disciplines</h3>
+                    <p>Marketing, finance, technology, and governance working together. Most consultants only see one piece. This system connects all four.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">3</div>
+                    <h3>It Includes the Measurement</h3>
+                    <p>Every system has built-in tracking. You know exactly what's working, what isn't, and where your next breakthrough is hiding.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">4</div>
+                    <h3>It Continues Without You</h3>
+                    <p>These aren't tactics that require constant attention. They're systems that run, compound, and improve over time — with or without daily oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>What You Get: Six Proven Systems</h2>
+                <p>Each system delivers specific, measurable outcomes.</p>
+            </div>
+            <div class="service-row">
+                <div class="service-item">
+                    <h3>Marketing Strategy</h3>
+                    <p>Acquisition systems that bring qualified buyers to you predictably, not randomly.</p>
+                    <span class="service-outcome">→ 2-3x Lead Flow</span>
+                </div>
+                <div class="service-item">
+                    <h3>AI & Automation</h3>
+                    <p>AI agents and workflows that handle what humans shouldn't be doing manually.</p>
+                    <span class="service-outcome">→ 10+ Hours/Week Saved</span>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-item">
+                    <h3>Growth Strategy</h3>
+                    <p>Clear roadmap with priorities that survive contact with reality.</p>
+                    <span class="service-outcome">→ 100% Clarity on Direction</span>
+                </div>
+                <div class="service-item">
+                    <h3>Fractional CMO</h3>
+                    <p>Marketing leadership without full-time overhead. Systems and capability building.</p>
+                    <span class="service-outcome">→ Leadership Without Salary</span>
+                </div>
+            </div>
+            <div class="service-row">
+                <div class="service-item">
+                    <h3>Non-Executive Director</h3>
+                    <p>Independent strategic challenge from someone who understands growth.</p>
+                    <span class="service-outcome">→ Governance That Scales</span>
+                </div>
+                <div class="service-item">
+                    <h3>Investment</h3>
+                    <p>For the right business: capital alongside time, with aligned incentives.</p>
+                    <span class="service-outcome">→ Active Partnership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🎯</div>
+                <h3>The Clarity Guarantee</h3>
+                <p>Every engagement begins with a diagnostic call. If we don't identify at least three specific opportunities to improve your growth systems — opportunities worth at least 10x the time you invested — I'll refund the session entirely. You have nothing to lose except confusion about what's holding your business back.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Get Specific About Growth?</h2>
+            <p>Book a diagnostic call. In 30 minutes, we'll identify exactly what's limiting your growth and map out the systems that would change it.</p>
+            <a href="pages/connect.html" class="final-cta-btn">
+                Book Your Diagnostic Call
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="final-cta-note">No obligation. Covered by the Clarity Guarantee.</p>
+            <div class="spots-notice">
+                ⚡ Currently 2 spots available for Q1 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

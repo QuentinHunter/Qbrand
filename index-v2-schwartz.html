@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Hidden Ceiling Holding Your Business Back | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-light: #152238;
+            --electric: #00d4ff;
+            --electric-glow: rgba(0, 212, 255, 0.3);
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --silver: #94a3b8;
+            --slate: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--navy);
+            line-height: 1.7;
+            background: var(--white);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--navy);
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .top-bar p {
+            color: var(--electric);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: var(--white);
+            border-bottom: 1px solid rgba(10, 22, 40, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+
+        .nav-cta {
+            background: var(--navy) !important;
+            color: var(--white) !important;
+            padding: 12px 24px !important;
+            border-radius: 8px;
+        }
+
+        .nav-cta:hover {
+            background: var(--navy-light) !important;
+        }
+
+        /* Hero - Schwartz "Big Promise" Style */
+        .hero {
+            padding: 100px 0 120px;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--electric);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--navy);
+            max-width: 900px;
+            margin: 0 auto 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--electric);
+            text-shadow: 0 0 40px var(--electric-glow);
+        }
+
+        .hero-sub {
+            font-size: 1.35rem;
+            color: var(--slate);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.2);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(10, 22, 40, 0.3);
+        }
+
+        .hero-proof {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-item span {
+            display: block;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+        }
+
+        .proof-item p {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-top: 5px;
+        }
+
+        /* Problem Agitation - Schwartz's "Enter the Conversation" */
+        .problem-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .problem-content h2 span {
+            color: var(--electric);
+        }
+
+        .problem-content p {
+            color: var(--silver);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 35px;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--silver);
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-icon {
+            color: var(--electric);
+            font-size: 1.3rem;
+            margin-top: 2px;
+        }
+
+        .problem-image {
+            position: relative;
+        }
+
+        .problem-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--electric);
+            box-shadow: 0 0 60px var(--electric-glow);
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .solution-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+
+        .solution-header h2 {
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .solution-header p {
+            font-size: 1.15rem;
+            color: var(--slate);
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .solution-card {
+            background: var(--off-white);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            border-color: var(--electric);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.1);
+        }
+
+        .solution-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--navy);
+            color: var(--electric);
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .solution-card p {
+            color: var(--slate);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Desire Intensification Section */
+        .desire-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .desire-section h2 {
+            font-size: 2.6rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+        }
+
+        .desire-section h2 span {
+            color: var(--electric);
+        }
+
+        .desire-section > p {
+            font-size: 1.15rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .desire-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .desire-item {
+            background: rgba(255,255,255,0.05);
+            padding: 35px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .desire-item h4 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            color: var(--electric);
+            margin-bottom: 10px;
+        }
+
+        .desire-item p {
+            font-size: 0.9rem;
+            color: var(--silver);
+        }
+
+        /* Credibility Section */
+        .credibility-section {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .credibility-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .cred-item {
+            text-align: center;
+        }
+
+        .cred-item h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 8px;
+        }
+
+        .cred-item p {
+            font-size: 0.9rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        /* Final CTA - Schwartz "Call to Action" */
+        .final-cta {
+            padding: 120px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .final-cta > p {
+            font-size: 1.15rem;
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto 45px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 22px 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 15px 45px rgba(10, 22, 40, 0.25);
+        }
+
+        .final-cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(10, 22, 40, 0.35);
+        }
+
+        .final-cta-note {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--slate);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+        }
+
+        .footer-links a {
+            color: var(--silver);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: var(--silver);
+        }
+
+        .social-links a {
+            color: var(--silver);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.85rem;
+        }
+
+        .social-links a:hover {
+            color: var(--electric);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .problem-image {
+                order: -1;
+            }
+
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .desire-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-sub {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .problem-content h2,
+            .solution-header h2,
+            .desire-section h2,
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .hero-proof {
+                gap: 30px;
+            }
+
+            .desire-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .footer-content,
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <p>For business owners ready to break through their revenue ceiling</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#solution">How It Works</a></li>
+                <li><a href="#credentials">About</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-eyebrow">The System Behind Scalable Growth</span>
+            <h1>Every Business Has a <span>Hidden Ceiling</span>. Most Never Find It Until It's Too Late.</h1>
+            <p class="hero-sub">The difference between businesses that scale and businesses that stall isn't luck, talent, or timing. It's infrastructure. Discover the system that makes growth predictable.</p>
+            <a href="pages/connect.html" class="hero-cta">
+                Reveal Your Growth Ceiling
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="hero-proof">
+                <div class="proof-item">
+                    <span>30+</span>
+                    <p>Years Building Systems</p>
+                </div>
+                <div class="proof-item">
+                    <span>FTSE 100</span>
+                    <p>Corporate Experience</p>
+                </div>
+                <div class="proof-item">
+                    <span>5+</span>
+                    <p>Board Positions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <h2>You've Already Tried <span>Everything</span></h2>
+                    <p>You've hired agencies. Invested in marketing. Maybe brought in consultants. You've worked harder than anyone you know. And yet...</p>
+                    <p>Something invisible keeps pushing back. Revenue hits the same wall. Growth spurts fade. Your calendar fills while your bank account flatlines.</p>
+                    <ul class="problem-list">
+                        <li>
+                            <span class="problem-icon">×</span>
+                            <span>Marketing campaigns that "should work" but drain cash instead</span>
+                        </li>
+                        <li>
+                            <span class="problem-icon">×</span>
+                            <span>You've become the bottleneck for every decision</span>
+                        </li>
+                        <li>
+                            <span class="problem-icon">×</span>
+                            <span>Growth feels random — feast or famine, never predictable</span>
+                        </li>
+                        <li>
+                            <span class="problem-icon">×</span>
+                            <span>Taking time off means watching revenue drop</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="problem-image">
+                    <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="solution-header">
+                <h2>The Growth System That Changes Everything</h2>
+                <p>After 30 years and hundreds of businesses, I've isolated the six systems that separate scalable companies from everyone else. When all six work together, growth becomes inevitable.</p>
+            </div>
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <div class="solution-number">1</div>
+                    <h3>Acquisition Engine</h3>
+                    <p>Marketing systems that bring qualified buyers to you predictably — not random campaigns that burn cash chasing vanity metrics.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">2</div>
+                    <h3>Conversion Architecture</h3>
+                    <p>Funnels engineered to compound, not leak. Every touchpoint moves prospects toward becoming customers and customers toward becoming advocates.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">3</div>
+                    <h3>Automation Layer</h3>
+                    <p>AI agents and workflows that handle what humans shouldn't — freeing your team for the work that actually moves the needle.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">4</div>
+                    <h3>Measurement System</h3>
+                    <p>Numbers that tell the truth. Know exactly what's working, what isn't, and where your next breakthrough is hiding.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">5</div>
+                    <h3>Strategic Clarity</h3>
+                    <p>A roadmap that doesn't gather dust. Clear priorities that survive contact with reality and align your entire team.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">6</div>
+                    <h3>Governance Framework</h3>
+                    <p>The challenge that keeps you honest. Scale without breaking what works. Protect the growth you've built.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desire Section -->
+    <section class="desire-section">
+        <div class="container">
+            <h2>Imagine Running a Business That <span>Scales Without You</span></h2>
+            <p>Where systems do the heavy lifting and you focus on what matters most.</p>
+            <div class="desire-grid">
+                <div class="desire-item">
+                    <h4>3x</h4>
+                    <p>Lead Flow Without Proportional Effort</p>
+                </div>
+                <div class="desire-item">
+                    <h4>40%</h4>
+                    <p>Time Recovered From Automation</p>
+                </div>
+                <div class="desire-item">
+                    <h4>100%</h4>
+                    <p>Clarity on What's Actually Working</p>
+                </div>
+                <div class="desire-item">
+                    <h4>∞</h4>
+                    <p>Growth That Compounds Over Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Section -->
+    <section class="credibility-section" id="credentials">
+        <div class="container">
+            <div class="credibility-grid">
+                <div class="cred-item">
+                    <h4>Certification</h4>
+                    <p>DigitalMarketer Certified Partner</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Finance</h4>
+                    <p>ACMA Chartered Accountant</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Technology</h4>
+                    <p>MindStudio AI Developer</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Governance</h4>
+                    <p>NED Qualified</p>
+                </div>
+                <div class="cred-item">
+                    <h4>Experience</h4>
+                    <p>GSK, TBWA, 5+ Boards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Find Your Hidden Ceiling?</h2>
+            <p>Book a call. In 30 minutes, we'll identify exactly what's holding your growth back and map out what a real system looks like for your business.</p>
+            <a href="pages/connect.html" class="final-cta-btn">
+                Book Your Strategy Call
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="final-cta-note">No obligation. No pitch. Just clarity.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-logo">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/Quentinhunter" target="_blank">Twitter</a>
+                    <a href="https://www.youtube.com/@quentinshunter" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

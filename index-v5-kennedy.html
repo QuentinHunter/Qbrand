@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WARNING: Your Business Has a Ceiling. Here's How to Smash Through It.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --black: #0d0d0d;
+            --dark: #1a1a1a;
+            --gray: #2d2d2d;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --yellow: #ffd700;
+            --yellow-bright: #ffec00;
+            --red: #dc2626;
+            --red-dark: #b91c1c;
+            --green: #16a34a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--white);
+            line-height: 1.7;
+            background: var(--black);
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', Impact, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Urgent Top Bar */
+        .urgent-bar {
+            background: var(--red);
+            padding: 15px 0;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        .urgent-bar p {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: var(--black);
+            border-bottom: 2px solid var(--gray);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--yellow);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-cta {
+            background: var(--red) !important;
+            padding: 12px 24px !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--red-dark) !important;
+        }
+
+        /* Hero - Kennedy "Magnetic Headline" Style */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
+            text-align: center;
+        }
+
+        .hero-warning {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.05;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero h1 .strike {
+            text-decoration: line-through;
+            color: var(--red);
+            opacity: 0.7;
+        }
+
+        .hero-sub {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            margin: 40px auto;
+            max-width: 250px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--yellow);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--red);
+            color: var(--white);
+            padding: 22px 50px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        .hero-cta:hover {
+            background: var(--red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.5);
+        }
+
+        .hero-guarantee {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .hero-guarantee strong {
+            color: var(--green);
+        }
+
+        /* Pain/Gain Section */
+        .pain-section {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+
+        .pain-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pain-header h2 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .pain-header h2 span {
+            color: var(--red);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .pain-column {
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .pain-column.before {
+            background: rgba(220, 38, 38, 0.1);
+            border: 2px solid var(--red);
+        }
+
+        .pain-column.after {
+            background: rgba(22, 163, 74, 0.1);
+            border: 2px solid var(--green);
+        }
+
+        .pain-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pain-column.before h3 {
+            color: var(--red);
+        }
+
+        .pain-column.after h3 {
+            color: var(--green);
+        }
+
+        .pain-list {
+            list-style: none;
+        }
+
+        .pain-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .pain-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pain-column.before .pain-list li::before {
+            content: '✗';
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .pain-column.after .pain-list li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Who This Is For */
+        .who-section {
+            padding: 80px 0;
+            background: var(--black);
+            border-top: 3px solid var(--yellow);
+            border-bottom: 3px solid var(--yellow);
+        }
+
+        .who-section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .who-section h2 span {
+            color: var(--yellow);
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .who-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--red);
+        }
+
+        .who-column.for-you h3 {
+            color: var(--green);
+        }
+
+        .who-list {
+            list-style: none;
+        }
+
+        .who-list li {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        /* Credentials Strip */
+        .creds-section {
+            padding: 50px 0;
+            background: var(--gray);
+        }
+
+        .creds-section h3 {
+            text-align: center;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 25px;
+            letter-spacing: 0.1em;
+        }
+
+        .creds-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 40px;
+        }
+
+        .creds-list span {
+            color: var(--yellow);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section - Kennedy "Stack" Style */
+        .services-section {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+
+        .services-section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-section h2 span {
+            color: var(--yellow);
+        }
+
+        .service-stack {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stack-item {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 20px;
+            padding: 25px 0;
+            border-bottom: 2px dashed rgba(255,255,255,0.1);
+        }
+
+        .stack-item:last-child {
+            border-bottom: none;
+        }
+
+        .stack-number {
+            width: 50px;
+            height: 50px;
+            background: var(--yellow);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .stack-content h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--white);
+        }
+
+        .stack-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Scarcity Box */
+        .scarcity-section {
+            padding: 60px 0;
+            background: var(--black);
+        }
+
+        .scarcity-box {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 10px;
+            border: 3px solid var(--yellow);
+        }
+
+        .scarcity-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .scarcity-box p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .spots-counter {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 15px 35px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: var(--dark);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.15;
+        }
+
+        .final-cta h2 span {
+            color: var(--yellow);
+        }
+
+        .final-cta > .container > p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 25px 60px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .final-cta-btn:hover {
+            background: var(--yellow-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        .final-cta-ps {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid var(--yellow);
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-ps p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+        }
+
+        .final-cta-ps p:last-child {
+            margin-bottom: 0;
+        }
+
+        .final-cta-ps strong {
+            color: var(--yellow);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--black);
+            border-top: 2px solid var(--gray);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .pain-grid,
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .pain-header h2,
+            .who-section h2,
+            .services-section h2,
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .final-cta-btn {
+                padding: 20px 40px;
+                font-size: 1.2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+
+            .creds-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgent Bar -->
+    <div class="urgent-bar">
+        <p>⚠️ Warning: If Your Business Isn't Growing, You're Dying. Read This Page.</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#services">What You Get</a></li>
+                <li><a href="#who">Is This For You?</a></li>
+                <li><a href="pages/connect.html" class="nav-cta">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-warning">⚡ Straight Talk Alert</span>
+            <h1>Stop <span class="strike">Hoping</span> for Growth. <span>Build the System</span> That Makes It Inevitable.</h1>
+            <p class="hero-sub">Look — you've tried the tactics. The agencies. The courses. The "strategies" that looked good on paper. Still stuck at the same revenue ceiling? There's a reason. And it's not what you think.</p>
+
+            <div class="hero-image">
+                <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+            </div>
+
+            <a href="pages/connect.html" class="hero-cta">
+                Yes — Show Me The System
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="hero-guarantee"><strong>No BS.</strong> No fluff. No wasted time. Just systems that work.</p>
+        </div>
+    </section>
+
+    <!-- Pain/Gain Section -->
+    <section class="pain-section">
+        <div class="container">
+            <div class="pain-header">
+                <h2>The <span>Real</span> Difference Between Businesses That Scale and Those That Stall</h2>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-column before">
+                    <h3>❌ Where You Are Now</h3>
+                    <ul class="pain-list">
+                        <li>Marketing feels like throwing money into a black hole</li>
+                        <li>You're the bottleneck for every major decision</li>
+                        <li>Growth is random — feast or famine, never predictable</li>
+                        <li>You can't take time off without revenue dropping</li>
+                        <li>Agencies and consultants give advice but not results</li>
+                        <li>You work harder every year but profit stays flat</li>
+                    </ul>
+                </div>
+                <div class="pain-column after">
+                    <h3>✓ Where You Could Be</h3>
+                    <ul class="pain-list">
+                        <li>New customers arrive predictably, on schedule</li>
+                        <li>Your team runs without needing you for every call</li>
+                        <li>Revenue compounds — up and to the right</li>
+                        <li>Business grows even when you take real holidays</li>
+                        <li>Systems do the work, metrics tell the truth</li>
+                        <li>You work smarter and wealth actually builds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Strip -->
+    <section class="creds-section">
+        <div class="container">
+            <h3>30 Years. Four Disciplines. One Goal: Your Growth.</h3>
+            <div class="creds-list">
+                <span>DigitalMarketer Certified</span>
+                <span>ACMA Chartered Accountant</span>
+                <span>AI Agent Developer</span>
+                <span>NED Qualified</span>
+                <span>GSK & TBWA Alumni</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Section -->
+    <section class="who-section" id="who">
+        <div class="container">
+            <h2>This Is <span>Not</span> For Everyone</h2>
+            <div class="who-grid">
+                <div class="who-column">
+                    <h3>❌ Do NOT Apply If...</h3>
+                    <ul class="who-list">
+                        <li>→ You're looking for a magic bullet or overnight success</li>
+                        <li>→ You want someone to just "do marketing" for you</li>
+                        <li>→ You're not willing to invest in proper infrastructure</li>
+                        <li>→ You think "working harder" is the answer</li>
+                        <li>→ You're not serious about scaling</li>
+                    </ul>
+                </div>
+                <div class="who-column for-you">
+                    <h3>✓ This IS For You If...</h3>
+                    <ul class="who-list">
+                        <li>→ You've built something real and want to scale it</li>
+                        <li>→ You're tired of random tactics that don't compound</li>
+                        <li>→ You want systems, not just advice</li>
+                        <li>→ You understand that growth requires infrastructure</li>
+                        <li>→ You're ready to build a business that works without you</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2>What You Actually <span>Get</span></h2>
+            <div class="service-stack">
+                <div class="stack-item">
+                    <div class="stack-number">1</div>
+                    <div class="stack-content">
+                        <h4>Marketing Systems That Actually Work</h4>
+                        <p>Not campaigns. Not tactics. Systems that bring qualified buyers to you predictably, built on frameworks proven across hundreds of businesses.</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-number">2</div>
+                    <div class="stack-content">
+                        <h4>AI & Automation That Pays For Itself</h4>
+                        <p>Production-ready automation that handles what humans shouldn't be doing. Free up 10+ hours a week. Scale without proportional headcount.</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-number">3</div>
+                    <div class="stack-content">
+                        <h4>Strategic Clarity That Survives Reality</h4>
+                        <p>Not another strategy document that gathers dust. A roadmap your team actually follows, with priorities that don't change every week.</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-number">4</div>
+                    <div class="stack-content">
+                        <h4>Numbers That Tell The Truth</h4>
+                        <p>Know exactly what's working. Know exactly what isn't. Stop guessing. Start measuring. Build on data, not hope.</p>
+                    </div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-number">5</div>
+                    <div class="stack-content">
+                        <h4>Leadership Without The Overhead</h4>
+                        <p>Fractional CMO. NED. Investor. Pick the relationship that fits. Get experienced leadership without full-time salaries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity Section -->
+    <section class="scarcity-section">
+        <div class="container">
+            <div class="scarcity-box">
+                <h3>⚠️ Fair Warning</h3>
+                <p>I only work with a handful of businesses at any given time. Not artificial scarcity — just reality. The work requires real attention. If you're serious, apply now.</p>
+                <div class="spots-counter">Only 3 Spots Per Quarter</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Stop Screwing Around and <span>Actually Scale?</span></h2>
+            <p>Look — you've read this far. You already know whether this is for you. If it is, stop thinking about it and take action.</p>
+            <a href="pages/connect.html" class="final-cta-btn">
+                Apply For A Strategy Call
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <div class="final-cta-ps">
+                <p><strong>P.S.</strong> — If you're wondering whether this is worth your time: I've spent 30 years building these systems. Worked with FTSE 100 companies. Sat on boards. Built automation that actually runs in production. I'm not some guru selling courses. I build the infrastructure myself.</p>
+                <p><strong>P.P.S.</strong> — For the right business, I also invest. Capital alongside time. Fully aligned incentives. If that interests you, mention it when we talk.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

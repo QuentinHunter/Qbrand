@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>At 60, Most Business Advisors Dispense Opinion. This One Delivers Systems. | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --cream: #faf8f5;
+            --ivory: #f5f2ed;
+            --charcoal: #2d2d2d;
+            --warm-gray: #6b6560;
+            --burgundy: #722f37;
+            --burgundy-light: #8b3a44;
+            --gold-accent: #b8860b;
+            --border: #e0dcd6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--charcoal);
+            line-height: 1.8;
+            background: var(--cream);
+            font-size: 19px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .container-narrow {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        /* Navigation - Minimal Ogilvy Style */
+        nav {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--warm-gray);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--burgundy);
+        }
+
+        /* Hero - Ogilvy Editorial Style */
+        .hero {
+            padding: 80px 0 100px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .hero-content {
+            padding-top: 20px;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--charcoal);
+            margin-bottom: 35px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-intro {
+            font-size: 1.3rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .hero-body {
+            columns: 2;
+            column-gap: 40px;
+            font-size: 1.05rem;
+            color: var(--charcoal);
+            line-height: 1.85;
+        }
+
+        .hero-body p {
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(20%);
+        }
+
+        .hero-image-caption {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--warm-gray);
+            margin-top: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Facts Section - Ogilvy loved specifics */
+        .facts-section {
+            padding: 70px 0;
+            background: var(--ivory);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .fact-item h3 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .fact-item h3 span {
+            color: var(--burgundy);
+        }
+
+        .fact-item p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--warm-gray);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.5;
+        }
+
+        /* Long-form Body Copy */
+        .editorial-section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .editorial-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .editorial-header h2 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .editorial-header p {
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .editorial-columns {
+            columns: 2;
+            column-gap: 60px;
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .editorial-columns p {
+            margin-bottom: 25px;
+        }
+
+        .editorial-columns p:first-of-type::first-letter {
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 12px;
+            margin-top: 8px;
+            color: var(--burgundy);
+            font-weight: 500;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            break-inside: avoid;
+            background: var(--ivory);
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 4px solid var(--burgundy);
+        }
+
+        .pull-quote p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pull-quote cite {
+            display: block;
+            margin-top: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-style: normal;
+            color: var(--warm-gray);
+            letter-spacing: 0.1em;
+        }
+
+        /* Services - Editorial Cards */
+        .services-section {
+            padding: 100px 0;
+            background: var(--ivory);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .services-header h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .services-header p {
+            font-size: 1.15rem;
+            color: var(--warm-gray);
+            font-style: italic;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 45px 35px;
+            border: 1px solid var(--border);
+        }
+
+        .service-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--burgundy);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--warm-gray);
+            line-height: 1.75;
+        }
+
+        /* Credentials - Ogilvy Style List */
+        .credentials-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .credentials-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .credentials-header h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+        }
+
+        .credentials-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 40px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .credential-item::before {
+            content: '•';
+            color: var(--burgundy);
+            font-size: 1.5rem;
+        }
+
+        .credential-item span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            color: var(--charcoal);
+        }
+
+        /* CTA Section - Elegant */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: var(--charcoal);
+            color: var(--cream);
+        }
+
+        .cta-section h2 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: var(--cream);
+        }
+
+        .cta-section > .container > p {
+            font-size: 1.2rem;
+            color: rgba(250, 248, 245, 0.7);
+            max-width: 550px;
+            margin: 0 auto 45px;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--burgundy);
+            color: var(--cream);
+            padding: 18px 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--burgundy-light);
+        }
+
+        .cta-note {
+            margin-top: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(250, 248, 245, 0.5);
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--warm-gray);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--burgundy);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--warm-gray);
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-body {
+                columns: 1;
+            }
+
+            .editorial-columns {
+                columns: 1;
+            }
+
+            .facts-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container,
+            .container-narrow {
+                padding: 0 25px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .facts-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .editorial-header h2,
+            .services-header h2,
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Quentin Hunter</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/connect.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Strategic Advisory</p>
+                    <h1>At 60, Most Business Advisors Dispense Opinion. This One Delivers Systems.</h1>
+                    <p class="hero-intro">After thirty years building growth infrastructure for companies ranging from FTSE 100 corporations to ambitious owner-managed businesses, Quentin Hunter has identified a pattern that separates businesses that scale from those that stall.</p>
+                    <div class="hero-body">
+                        <p>The pattern is remarkably consistent. It has nothing to do with the industry, the product, or even the talent of the founder. It comes down to infrastructure.</p>
+                        <p>Specifically: the presence or absence of systems that make growth repeatable, predictable, and profitable without requiring the founder to be involved in every decision.</p>
+                        <p>Most consultants offer advice. Mr. Hunter builds the systems themselves — drawing on qualifications in marketing (DigitalMarketer Certified Partner), finance (Chartered Management Accountant), technology (MindStudio AI Agent Developer), and governance (NED qualified through the Institute of Board Members).</p>
+                        <p>The result is not a strategy document that gathers dust. It is operational infrastructure that continues working long after the engagement ends.</p>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+                    <p class="hero-image-caption">Quentin Hunter, ACMA FRGS — London</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts-section">
+        <div class="container">
+            <div class="facts-grid">
+                <div class="fact-item">
+                    <h3>30<span>+</span></h3>
+                    <p>Years Building Growth Systems</p>
+                </div>
+                <div class="fact-item">
+                    <h3>5<span>+</span></h3>
+                    <p>Board Positions Held</p>
+                </div>
+                <div class="fact-item">
+                    <h3>GSK</h3>
+                    <p>FTSE 100 Experience</p>
+                </div>
+                <div class="fact-item">
+                    <h3>TBWA</h3>
+                    <p>Global Agency Network</p>
+                </div>
+                <div class="fact-item">
+                    <h3>4</h3>
+                    <p>Distinct Disciplines Integrated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Section -->
+    <section class="editorial-section" id="about">
+        <div class="container-narrow">
+            <div class="editorial-header">
+                <h2>The Problem With Most Advisory</h2>
+                <p>And why systems thinking changes everything</p>
+            </div>
+            <div class="editorial-columns">
+                <p>Marketing consultants optimise campaigns without understanding margins. Finance people cut costs without understanding customer value. Technology consultants build systems nobody uses. Each brings expertise in their domain while remaining blind to the others.</p>
+
+                <p>The businesses that break through their revenue ceilings do something different. They build infrastructure that connects these disciplines — where marketing spend is informed by unit economics, where automation amplifies human capability rather than replacing it, and where measurement reveals truth rather than vanity.</p>
+
+                <div class="pull-quote">
+                    <p>"The best solutions usually come from connecting dots that specialists never see. Real problems don't respect neat categories."</p>
+                    <cite>— Quentin Hunter</cite>
+                </div>
+
+                <p>This perspective did not come from a book or a course. It emerged from three decades of working across all three disciplines — marketing, finance, and technology — in contexts ranging from global corporations to owner-managed businesses trying to break through their first million.</p>
+
+                <p>The patterns repeat with remarkable consistency. The tactics change. The platforms change. The technology changes. But the fundamentals of building a business that scales without its founder? Those have remained constant since the beginning.</p>
+
+                <p>What changes is the sophistication of the tools available. Today, AI agents can handle work that once required hiring entire teams. Automation can scale operations without proportional increases in headcount. But these tools only compound growth when they're built on solid strategic foundations.</p>
+
+                <p>Without those foundations, technology becomes expensive experimentation. With them, it becomes a genuine multiplier.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>The Six Systems of Scalable Growth</h2>
+                <p>Each designed to work independently. Together, they compound.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <p class="service-number">01 — MARKETING STRATEGY</p>
+                    <h3>The Acquisition Engine</h3>
+                    <p>Systems that bring qualified buyers to you predictably — built on frameworks proven across hundreds of businesses and three decades of what actually converts.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-number">02 — AI & AUTOMATION</p>
+                    <h3>The Multiplier</h3>
+                    <p>Production-ready AI agents and automation systems that handle what humans shouldn't — freeing your team for work that actually moves the needle.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-number">03 — GROWTH STRATEGY</p>
+                    <h3>The Roadmap</h3>
+                    <p>Strategic clarity for the next phase. Clear priorities that survive contact with reality and align your entire organisation around getting there.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-number">04 — FRACTIONAL CMO</p>
+                    <h3>The Leadership</h3>
+                    <p>Marketing leadership without the overhead. Embedded presence building systems, developing capability, and maintaining momentum.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-number">05 — NON-EXECUTIVE DIRECTOR</p>
+                    <h3>The Governance</h3>
+                    <p>Independent strategic challenge from someone who understands growth but asks uncomfortable questions. Formally qualified. Operationally experienced.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-number">06 — INVESTMENT</p>
+                    <h3>The Partnership</h3>
+                    <p>For the right business, capital alongside time. Active partnership building the systems that drive growth, with incentives fully aligned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials-section">
+        <div class="container">
+            <div class="credentials-header">
+                <h2>Professional Credentials</h2>
+            </div>
+            <div class="credentials-list">
+                <div class="credential-item">
+                    <span>DigitalMarketer Certified Partner</span>
+                </div>
+                <div class="credential-item">
+                    <span>ACMA Chartered Management Accountant</span>
+                </div>
+                <div class="credential-item">
+                    <span>MindStudio AI Agent Developer</span>
+                </div>
+                <div class="credential-item">
+                    <span>NED Qualified (Institute of Board Members)</span>
+                </div>
+                <div class="credential-item">
+                    <span>Fellow of the Royal Geographical Society</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>A Conversation About Your Growth</h2>
+            <p>Every system begins with understanding where you are, where you want to be, and what's in between. No obligation. Just clarity.</p>
+            <a href="pages/connect.html" class="cta-button">Arrange a Discussion</a>
+            <p class="cta-note">Typically responds within 24 hours</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

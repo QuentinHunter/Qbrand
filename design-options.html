@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>13 Website Design Options | Choose Your Preferred Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, #a8a8a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .current-design {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .current-design h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 15px;
+        }
+
+        .current-design a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .current-design a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.95rem;
+        }
+
+        .section-header .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .section-header .badge.modern {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .section-header .badge.bonus {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .design-card.bonus .card-number {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .design-card.bonus .card-features li::before {
+            color: #10b981;
+        }
+
+        .design-card.bonus .view-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .design-card.bonus .view-btn:hover {
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .design-section {
+            margin-bottom: 60px;
+        }
+
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .design-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .design-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            padding: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .card-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .design-card.modern .card-number {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .card-style {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .card-features li::before {
+            content: '→';
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .design-card.modern .card-features li::before {
+            color: #f97316;
+        }
+
+        .card-colors {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .color-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .view-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .design-card.modern .view-btn {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .view-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .design-card.modern .view-btn:hover {
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .designs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>13 Website Design Options</h1>
+            <p class="subtitle">Each design is inspired by a legendary direct response copywriter — 5 classic masters, 5 modern innovators, and 3 bonus marketing legends. Click to preview each option.</p>
+        </header>
+
+        <div class="current-design">
+            <h2>Current Design</h2>
+            <a href="index.html" target="_blank">
+                View Original Website
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+        </div>
+
+        <!-- Classic Copywriters Section -->
+        <div class="design-section">
+            <div class="section-header">
+                <span class="badge">Classic Masters</span>
+                <h2>Legendary Direct Response Copywriters</h2>
+                <p>Timeless styles from the pioneers who invented modern direct response copy</p>
+            </div>
+
+            <div class="designs-grid">
+                <!-- Design 1: Gary Halbert -->
+                <div class="design-card">
+                    <div class="card-header">
+                        <div class="card-number">1</div>
+                        <h3 class="card-title">The Halbert</h3>
+                        <p class="card-style">Gary Halbert Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Personal, story-driven design styled as a letter from a friend. Features the famous "P.S. sections" Halbert was known for.</p>
+                        <ul class="card-features">
+                            <li>Letter-style layout</li>
+                            <li>Personal, conversational copy</li>
+                            <li>Multiple P.S. sections</li>
+                            <li>Warm, paper-like aesthetic</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #fdf6e3;"></div>
+                            <div class="color-dot" style="background: #2c2416;"></div>
+                            <div class="color-dot" style="background: #c41e3a;"></div>
+                            <div class="color-dot" style="background: #1e4a7c;"></div>
+                        </div>
+                        <a href="index-v1-halbert.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 2: Eugene Schwartz -->
+                <div class="design-card">
+                    <div class="card-header">
+                        <div class="card-number">2</div>
+                        <h3 class="card-title">The Schwartz</h3>
+                        <p class="card-style">Eugene Schwartz Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Based on "Breakthrough Advertising" principles. Big promise headlines, awareness-level copy, sophisticated buyer journey.</p>
+                        <ul class="card-features">
+                            <li>Big promise headline</li>
+                            <li>Problem-agitation-solution</li>
+                            <li>Desire intensification</li>
+                            <li>Modern, professional aesthetic</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #0a1628;"></div>
+                            <div class="color-dot" style="background: #00d4ff;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                            <div class="color-dot" style="background: #152238;"></div>
+                        </div>
+                        <a href="index-v2-schwartz.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 3: David Ogilvy -->
+                <div class="design-card">
+                    <div class="card-header">
+                        <div class="card-number">3</div>
+                        <h3 class="card-title">The Ogilvy</h3>
+                        <p class="card-style">David Ogilvy Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Magazine-quality editorial design with long-form copy, specific facts, and elegant typography.</p>
+                        <ul class="card-features">
+                            <li>Editorial magazine layout</li>
+                            <li>Two-column long-form copy</li>
+                            <li>Fact-rich content</li>
+                            <li>Classic, timeless elegance</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #faf8f5;"></div>
+                            <div class="color-dot" style="background: #2d2d2d;"></div>
+                            <div class="color-dot" style="background: #722f37;"></div>
+                            <div class="color-dot" style="background: #6b6560;"></div>
+                        </div>
+                        <a href="index-v3-ogilvy.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 4: Claude Hopkins -->
+                <div class="design-card">
+                    <div class="card-header">
+                        <div class="card-number">4</div>
+                        <h3 class="card-title">The Hopkins</h3>
+                        <p class="card-style">Claude Hopkins Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Scientific advertising principles with specific claims, measurable outcomes, and reason-why copy.</p>
+                        <ul class="card-features">
+                            <li>Specific, measurable claims</li>
+                            <li>Reason-why copy</li>
+                            <li>Guarantee section</li>
+                            <li>Clean, trustworthy design</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                            <div class="color-dot" style="background: #1d4ed8;"></div>
+                            <div class="color-dot" style="background: #059669;"></div>
+                            <div class="color-dot" style="background: #fbbf24;"></div>
+                        </div>
+                        <a href="index-v4-hopkins.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 5: Dan Kennedy -->
+                <div class="design-card">
+                    <div class="card-header">
+                        <div class="card-number">5</div>
+                        <h3 class="card-title">The Kennedy</h3>
+                        <p class="card-style">Dan Kennedy Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Hard-hitting, no-BS approach with magnetic headlines, clear pain/gain contrast, urgency elements.</p>
+                        <ul class="card-features">
+                            <li>Magnetic headlines</li>
+                            <li>Pain vs. gain comparison</li>
+                            <li>Urgency and scarcity</li>
+                            <li>Bold, high-contrast design</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #0d0d0d;"></div>
+                            <div class="color-dot" style="background: #ffd700;"></div>
+                            <div class="color-dot" style="background: #dc2626;"></div>
+                            <div class="color-dot" style="background: #16a34a;"></div>
+                        </div>
+                        <a href="index-v5-kennedy.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Copywriters Section -->
+        <div class="design-section">
+            <div class="section-header">
+                <span class="badge modern">Modern Innovators</span>
+                <h2>Contemporary Direct Response Masters</h2>
+                <p>Cutting-edge styles from today's most successful copywriters and marketers</p>
+            </div>
+
+            <div class="designs-grid">
+                <!-- Design 6: Alex Hormozi -->
+                <div class="design-card modern">
+                    <div class="card-header">
+                        <div class="card-number">6</div>
+                        <h3 class="card-title">The Hormozi</h3>
+                        <p class="card-style">Alex Hormozi Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">$100M Offers approach with value stacking, bold claims, and no-BS direct communication.</p>
+                        <ul class="card-features">
+                            <li>Value stack presentation</li>
+                            <li>Bold, direct messaging</li>
+                            <li>Proof-heavy layout</li>
+                            <li>Dark mode, lime accents</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #000000;"></div>
+                            <div class="color-dot" style="background: #84cc16;"></div>
+                            <div class="color-dot" style="background: #171717;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                        </div>
+                        <a href="index-v6-hormozi.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 7: Russell Brunson -->
+                <div class="design-card modern">
+                    <div class="card-header">
+                        <div class="card-number">7</div>
+                        <h3 class="card-title">The Brunson</h3>
+                        <p class="card-style">Russell Brunson Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Story-based funnels with "Attractive Character" positioning and epiphany bridge storytelling.</p>
+                        <ul class="card-features">
+                            <li>Story-driven narrative</li>
+                            <li>3 Secrets framework</li>
+                            <li>Before/After transformation</li>
+                            <li>Friendly, approachable design</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #e63946;"></div>
+                            <div class="color-dot" style="background: #1d3557;"></div>
+                            <div class="color-dot" style="background: #f1faee;"></div>
+                            <div class="color-dot" style="background: #457b9d;"></div>
+                        </div>
+                        <a href="index-v7-brunson.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 8: Joanna Wiebe -->
+                <div class="design-card modern">
+                    <div class="card-header">
+                        <div class="card-number">8</div>
+                        <h3 class="card-title">The Wiebe</h3>
+                        <p class="card-style">Joanna Wiebe Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Copyhackers approach with voice-of-customer research, conversion-focused UX, and clean design.</p>
+                        <ul class="card-features">
+                            <li>Voice of customer quotes</li>
+                            <li>Conversion-optimized layout</li>
+                            <li>Clean, modern UX</li>
+                            <li>Purple gradient accents</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #7c3aed;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                            <div class="color-dot" style="background: #f5f3ff;"></div>
+                            <div class="color-dot" style="background: #111827;"></div>
+                        </div>
+                        <a href="index-v8-wiebe.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 9: Ramit Sethi -->
+                <div class="design-card modern">
+                    <div class="card-header">
+                        <div class="card-number">9</div>
+                        <h3 class="card-title">The Sethi</h3>
+                        <p class="card-style">Ramit Sethi Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Premium positioning with psychology-driven long-form copy and tiered offer presentation.</p>
+                        <ul class="card-features">
+                            <li>Premium positioning</li>
+                            <li>Long-form persuasion</li>
+                            <li>Tiered pricing cards</li>
+                            <li>Sophisticated, credible design</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #0d9488;"></div>
+                            <div class="color-dot" style="background: #1e293b;"></div>
+                            <div class="color-dot" style="background: #fefce8;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                        </div>
+                        <a href="index-v9-sethi.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 10: Stefan Georgi -->
+                <div class="design-card modern">
+                    <div class="card-header">
+                        <div class="card-number">10</div>
+                        <h3 class="card-title">The Georgi</h3>
+                        <p class="card-style">Stefan Georgi Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">VSL-inspired design with cinematic storytelling, pattern interrupts, and mechanism-based copy.</p>
+                        <ul class="card-features">
+                            <li>VSL-style flow</li>
+                            <li>Pattern interrupts</li>
+                            <li>Mechanism reveal</li>
+                            <li>Dark, cinematic aesthetic</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #0c0c0c;"></div>
+                            <div class="color-dot" style="background: #f97316;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                            <div class="color-dot" style="background: #525252;"></div>
+                        </div>
+                        <a href="index-v10-georgi.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bonus Copywriters Section -->
+        <div class="design-section">
+            <div class="section-header">
+                <span class="badge bonus">Bonus Styles</span>
+                <h2>Direct Response Marketing Legends</h2>
+                <p>Three additional styles from masters of offer creation, customer value, and persuasion</p>
+            </div>
+
+            <div class="designs-grid">
+                <!-- Design 11: Todd Brown -->
+                <div class="design-card bonus">
+                    <div class="card-header">
+                        <div class="card-number">11</div>
+                        <h3 class="card-title">The Brown</h3>
+                        <p class="card-style">Todd Brown Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Big Idea marketing with unique mechanism positioning. Sophisticated, educational approach that differentiates.</p>
+                        <ul class="card-features">
+                            <li>Unique mechanism reveal</li>
+                            <li>Big Idea differentiation</li>
+                            <li>Educational sophistication</li>
+                            <li>Dark, premium aesthetic</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #0d0d12;"></div>
+                            <div class="color-dot" style="background: #c9a227;"></div>
+                            <div class="color-dot" style="background: #16161d;"></div>
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                        </div>
+                        <a href="index-v11-brown.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 12: Ryan Deiss -->
+                <div class="design-card bonus">
+                    <div class="card-header">
+                        <div class="card-number">12</div>
+                        <h3 class="card-title">The Deiss</h3>
+                        <p class="card-style">Ryan Deiss Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Customer Value Optimization approach with journey mapping, before/after transformation, and data-driven positioning.</p>
+                        <ul class="card-features">
+                            <li>Customer value journey</li>
+                            <li>Before/After framework</li>
+                            <li>Data-driven messaging</li>
+                            <li>Clean, corporate design</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #ffffff;"></div>
+                            <div class="color-dot" style="background: #2563eb;"></div>
+                            <div class="color-dot" style="background: #f8fafc;"></div>
+                            <div class="color-dot" style="background: #0f172a;"></div>
+                        </div>
+                        <a href="index-v12-deiss.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+
+                <!-- Design 13: Perry Belcher -->
+                <div class="design-card bonus">
+                    <div class="card-header">
+                        <div class="card-number">13</div>
+                        <h3 class="card-title">The Belcher</h3>
+                        <p class="card-style">Perry Belcher Style</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Hard-hitting direct response with benefit stacking, urgency elements, and classic sales letter structure.</p>
+                        <ul class="card-features">
+                            <li>Sales letter format</li>
+                            <li>Benefit stacking</li>
+                            <li>Urgency and scarcity</li>
+                            <li>Classic cream/red aesthetic</li>
+                        </ul>
+                        <div class="card-colors">
+                            <div class="color-dot" style="background: #fefcf7;"></div>
+                            <div class="color-dot" style="background: #cc0000;"></div>
+                            <div class="color-dot" style="background: #ffff00;"></div>
+                            <div class="color-dot" style="background: #1a1a1a;"></div>
+                        </div>
+                        <a href="index-v13-belcher.html" target="_blank" class="view-btn">View Design →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Click any design to open it in a new tab. All designs are fully responsive and mobile-friendly.</p>
+        </footer>
+    </div>
+</body>
+</html>

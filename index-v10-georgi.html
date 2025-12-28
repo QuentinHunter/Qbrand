@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The "Invisible Ceiling" That's Keeping Your Business Stuck (And How To Break Through)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --dark: #0c0c0c;
+            --darker: #050505;
+            --orange: #f97316;
+            --orange-dark: #ea580c;
+            --orange-glow: rgba(249, 115, 22, 0.3);
+            --white: #ffffff;
+            --gray-200: #e5e5e5;
+            --gray-400: #a3a3a3;
+            --gray-600: #525252;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            color: var(--white);
+            line-height: 1.8;
+            background: var(--dark);
+            font-size: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* VSL-style Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at center top, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-warning {
+            display: inline-block;
+            background: var(--orange);
+            color: var(--dark);
+            padding: 8px 20px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--orange);
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* VSL Content Sections */
+        .vsl-section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .vsl-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .vsl-section p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: var(--gray-200);
+        }
+
+        .vsl-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .vsl-section strong {
+            color: var(--white);
+        }
+
+        .pattern-interrupt {
+            text-align: center;
+            padding: 50px 30px;
+            margin: 40px 0;
+            background: rgba(249, 115, 22, 0.05);
+            border-left: 4px solid var(--orange);
+            border-right: 4px solid var(--orange);
+        }
+
+        .pattern-interrupt h2 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .pattern-interrupt p {
+            font-size: 1.2rem;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        /* Big Idea / Mechanism Section */
+        .mechanism-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
+            text-align: center;
+        }
+
+        .mechanism-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .mechanism-section h2 span {
+            color: var(--orange);
+        }
+
+        .mechanism-section > .container > p {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .mechanism-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mechanism-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .mechanism-item:hover {
+            border-color: var(--orange);
+        }
+
+        .mechanism-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--orange);
+            color: var(--dark);
+            border-radius: 50%;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .mechanism-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .mechanism-item p {
+            font-size: 0.95rem;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-image {
+            margin-bottom: 40px;
+        }
+
+        .about-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--orange);
+            box-shadow: 0 0 60px var(--orange-glow);
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cred-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .cred-badge {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-200);
+        }
+
+        /* Emotional Story Section */
+        .story-section {
+            padding: 80px 0;
+            background: var(--darker);
+        }
+
+        .story-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .story-section h2 span {
+            color: var(--orange);
+        }
+
+        .story-block {
+            background: rgba(255,255,255,0.02);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .story-block p {
+            font-size: 1.1rem;
+            color: var(--gray-200);
+            margin-bottom: 20px;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-highlight {
+            font-size: 1.3rem;
+            color: var(--orange);
+            font-weight: 500;
+            font-style: italic;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(249, 115, 22, 0.3);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+            margin: 30px 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.1) 0%, transparent 60%);
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-section h2 span {
+            color: var(--orange);
+        }
+
+        .cta-section > .container > p {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 550px;
+            margin: 0 auto 45px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--orange);
+            color: var(--dark);
+            padding: 22px 55px;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 0 50px var(--orange-glow);
+        }
+
+        .cta-btn:hover {
+            background: var(--orange-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 0 70px var(--orange-glow);
+        }
+
+        .cta-guarantee {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: var(--gray-600);
+        }
+
+        .cta-guarantee strong {
+            color: var(--gray-400);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--darker);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .mechanism-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pattern-interrupt h2,
+            .mechanism-section h2,
+            .about-section h2,
+            .story-section h2,
+            .cta-section h2 {
+                font-size: 1.7rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 12px;
+            }
+
+            .cred-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-warning">Attention Business Owners</span>
+            <h1>The <span>"Invisible Ceiling"</span> That's Keeping Your Business Stuck</h1>
+            <p class="hero-sub">...and the little-known "Growth System" that breaks through it</p>
+        </div>
+    </section>
+
+    <!-- VSL Content -->
+    <section class="vsl-section">
+        <div class="container">
+            <p>If you've ever felt like your business has hit an invisible wall...</p>
+            <p>Where no matter how hard you work, how many hours you put in, or how much money you spend on marketing...</p>
+            <p><strong>Revenue just won't budge past a certain point...</strong></p>
+            <p>Then what I'm about to share with you could change everything.</p>
+            <p>Because I've discovered something that most business consultants don't want you to know.</p>
+        </div>
+    </section>
+
+    <div class="pattern-interrupt">
+        <h2>It's NOT about working harder.</h2>
+        <p>In fact, working harder is probably making the problem WORSE.</p>
+    </div>
+
+    <section class="vsl-section">
+        <div class="container">
+            <p>You see, after spending 30 years studying businesses that scale (and the ones that don't)...</p>
+            <p>Working inside FTSE 100 corporations like GSK...</p>
+            <p>Leading marketing at global agencies like TBWA...</p>
+            <p>Sitting on boards and investing my own money...</p>
+            <p>I've identified a <strong>pattern</strong> that separates the businesses that break through from the ones that stay stuck forever.</p>
+            <p>And it has nothing to do with the industry you're in, your product, or even how talented you are.</p>
+        </div>
+    </section>
+
+    <!-- Mechanism Section -->
+    <section class="mechanism-section">
+        <div class="container">
+            <h2>I Call It The <span>"Growth Infrastructure"</span> Method</h2>
+            <p>It's a system of six interconnected components that, when working together, make growth inevitable.</p>
+            <div class="mechanism-grid">
+                <div class="mechanism-item">
+                    <div class="mechanism-number">1</div>
+                    <h3>Acquisition Engine</h3>
+                    <p>Systems that bring qualified buyers predictably, not randomly</p>
+                </div>
+                <div class="mechanism-item">
+                    <div class="mechanism-number">2</div>
+                    <h3>Automation Layer</h3>
+                    <p>AI and workflows that scale without proportional headcount</p>
+                </div>
+                <div class="mechanism-item">
+                    <div class="mechanism-number">3</div>
+                    <h3>Measurement System</h3>
+                    <p>Metrics that reveal truth, not vanity</p>
+                </div>
+                <div class="mechanism-item">
+                    <div class="mechanism-number">4</div>
+                    <h3>Strategic Clarity</h3>
+                    <p>A roadmap your team actually follows</p>
+                </div>
+                <div class="mechanism-item">
+                    <div class="mechanism-number">5</div>
+                    <h3>Governance Framework</h3>
+                    <p>Challenge that keeps you honest as you scale</p>
+                </div>
+                <div class="mechanism-item">
+                    <div class="mechanism-number">6</div>
+                    <h3>Integration Protocol</h3>
+                    <p>How all six components work together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <h2>Here's What Makes This <span>Different</span></h2>
+            <div class="story-block">
+                <p>Most consultants focus on ONE area: marketing OR finance OR technology.</p>
+                <p>But here's the problem...</p>
+                <p>Your business doesn't work in silos. When your marketing doesn't talk to your finances, when your technology doesn't serve your strategy, when your governance doesn't support your growth...</p>
+                <p><strong>You hit a ceiling.</strong></p>
+            </div>
+            <p class="story-highlight">"The best solutions come from connecting dots that specialists never see."</p>
+            <div class="story-block">
+                <p>I'm a Chartered Accountant who became a certified marketer who became an AI developer. I sit on boards. I invest my own capital.</p>
+                <p>I see the <strong>whole picture</strong>. And that's why the systems I build work when nothing else has.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-image">
+                <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+            </div>
+            <h2>My name is Quentin Hunter.</h2>
+            <p>And for the past 30 years, I've been obsessed with one question: What makes some businesses scale while others stay stuck?</p>
+            <p>I've found the answer. And I want to share it with you.</p>
+            <div class="cred-badges">
+                <span class="cred-badge">ACMA Chartered Accountant</span>
+                <span class="cred-badge">DigitalMarketer Certified Partner</span>
+                <span class="cred-badge">AI Agent Developer</span>
+                <span class="cred-badge">NED Qualified</span>
+                <span class="cred-badge">30+ Years Experience</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready To Break Through <span>Your Ceiling?</span></h2>
+            <p>Book a call. I'll show you exactly where your "invisible ceiling" is hiding and what systems would break through it.</p>
+            <a href="pages/connect.html" class="cta-btn">
+                Yes — Show Me How
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="cta-guarantee"><strong>No obligation.</strong> If you don't get at least 3 breakthrough insights, I'll refund your time entirely.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-brand">Quentin Hunter</span>
+                <div class="footer-links">
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/privacy-policy.html">Privacy</a>
+                    <a href="pages/terms-and-conditions.html">Terms</a>
+                    <a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

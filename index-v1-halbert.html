@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Personal Letter From Quentin Hunter | Read This If You're Stuck at a Revenue Ceiling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <style>
+        :root {
+            --paper: #fdf6e3;
+            --paper-dark: #f5eedc;
+            --ink: #2c2416;
+            --ink-light: #5c5040;
+            --red: #c41e3a;
+            --red-dark: #9a1830;
+            --blue: #1e4a7c;
+            --highlight: #fff59d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            color: var(--ink);
+            line-height: 1.9;
+            background: var(--paper);
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Letter-style header */
+        .letter-header {
+            background: var(--ink);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .letter-header p {
+            color: var(--paper);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Main letter container */
+        .letter-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Date and "from" section */
+        .letter-date {
+            text-align: right;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: var(--ink-light);
+        }
+
+        .letter-from {
+            margin-bottom: 50px;
+        }
+
+        .letter-from img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--ink);
+            margin-bottom: 15px;
+        }
+
+        .letter-from p {
+            font-size: 0.95rem;
+            color: var(--ink-light);
+        }
+
+        /* Salutation */
+        .salutation {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        /* Letter body */
+        .letter-body p {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .letter-body p:first-of-type::first-letter {
+            font-size: 4rem;
+            float: left;
+            line-height: 1;
+            margin-right: 10px;
+            margin-top: 5px;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* Highlighted text */
+        .highlight {
+            background: var(--highlight);
+            padding: 2px 5px;
+        }
+
+        .underline {
+            text-decoration: underline;
+            text-decoration-color: var(--red);
+            text-underline-offset: 3px;
+        }
+
+        /* Bold red text */
+        .bold-red {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* Handwritten-style notes */
+        .margin-note {
+            background: #fffde7;
+            border-left: 3px solid var(--red);
+            padding: 20px 25px;
+            margin: 35px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .margin-note::before {
+            content: "Important:";
+            display: block;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 10px;
+            font-style: normal;
+        }
+
+        /* Bullet list styled as handwritten */
+        .letter-list {
+            margin: 30px 0 30px 30px;
+            list-style: none;
+        }
+
+        .letter-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .letter-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* PS sections - Halbert loved these */
+        .ps-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px dashed var(--ink-light);
+        }
+
+        .ps-section p {
+            margin-bottom: 20px;
+        }
+
+        .ps-label {
+            font-weight: 700;
+            color: var(--red);
+        }
+
+        /* Signature */
+        .signature {
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+
+        .signature-name {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--ink);
+            margin-top: 10px;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 50px 40px;
+            margin: 50px 0;
+            text-align: center;
+            border-radius: 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .cta-box p {
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--red);
+            color: var(--paper);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--red);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--paper);
+            border-color: var(--paper);
+        }
+
+        /* Credentials strip */
+        .credentials-strip {
+            background: var(--paper-dark);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--ink-light);
+            border-bottom: 1px solid var(--ink-light);
+        }
+
+        .credentials-strip p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            letter-spacing: 0.05em;
+        }
+
+        /* Testimonial in letter style */
+        .testimonial-letter {
+            background: var(--paper-dark);
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid var(--ink-light);
+            position: relative;
+        }
+
+        .testimonial-letter::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--red);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .testimonial-letter p {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-style: normal;
+            color: var(--ink);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.6;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        footer a {
+            color: var(--paper);
+            opacity: 0.8;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .letter-container {
+                padding: 40px 25px;
+            }
+
+            body {
+                font-size: 16px;
+            }
+
+            .cta-box {
+                padding: 35px 25px;
+            }
+
+            .cta-box h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="letter-header">
+        <p>A Personal Letter From Quentin Hunter — Please Read Every Word</p>
+    </div>
+
+    <!-- Letter Container -->
+    <div class="letter-container">
+        <!-- Date -->
+        <div class="letter-date">
+            December 2024<br>
+            London, England
+        </div>
+
+        <!-- From section with photo -->
+        <div class="letter-from">
+            <img src="assets/images/67336c561de0b76874ca2b92.png" alt="Quentin Hunter">
+            <p>From the desk of Quentin Hunter, ACMA FRGS</p>
+        </div>
+
+        <!-- Salutation -->
+        <p class="salutation">Dear Fellow Business Builder,</p>
+
+        <!-- Letter Body -->
+        <div class="letter-body">
+            <p>Let me tell you a secret that took me thirty years and several million pounds in client revenue to learn. It's something most consultants will never admit because it would put them out of business...</p>
+
+            <p><span class="bold-red">Growth is not complicated.</span> It's not about finding the next shiny tactic or the newest social media platform or the latest AI tool everyone's buzzing about.</p>
+
+            <p>The businesses that scale — the ones that actually make their founders wealthy and free — they all have <span class="underline">one thing in common</span>...</p>
+
+            <p><span class="highlight">They built systems.</span></p>
+
+            <p>Not random marketing campaigns. Not expensive agencies running experiments with their money. Not "hustle harder" motivation. <em>Systems.</em> Predictable. Repeatable. Profitable.</p>
+
+            <div class="margin-note">
+                I've watched business owners burn through six figures on marketing that "should have worked." I've seen brilliant founders stuck at the same revenue ceiling for years. And in almost every case, the problem wasn't effort or talent or even market conditions. It was the absence of a system.
+            </div>
+
+            <p>Here's what I mean...</p>
+
+            <p>When a business has a real growth system in place:</p>
+
+            <ul class="letter-list">
+                <li>New customers arrive predictably, not randomly</li>
+                <li>The founder isn't the bottleneck for every decision</li>
+                <li>Revenue grows even when they take time off</li>
+                <li>The numbers tell them exactly what's working (and what isn't)</li>
+                <li>They can see problems coming before they become emergencies</li>
+            </ul>
+
+            <p>Now, you might be wondering why I'm qualified to say any of this. Fair question.</p>
+
+            <p>I've spent three decades building growth systems across every type of business imaginable. FTSE 100 corporations like GSK. Global agencies like TBWA. Owner-managed businesses trying to break through their first million. Tech startups. Professional services firms. E-commerce brands.</p>
+
+            <p>I'm a Chartered Management Accountant (so I understand the numbers behind the growth). A DigitalMarketer Certified Partner (so I know what actually converts). An AI Agent Developer (so I can automate what humans shouldn't be doing). And I sit on boards because I've learned that <span class="underline">strategy without governance is just expensive hope</span>.</p>
+
+            <p>But here's what really matters:</p>
+
+            <p class="bold-red">I've seen the same patterns repeat hundreds of times.</p>
+
+            <p>The tactics change. The platforms change. The technology changes. But the fundamentals of building a business that scales? Those haven't changed since I started in this game.</p>
+
+            <div class="testimonial-letter">
+                <p>"Working with Quentin was like finally getting the operating manual for my business. We'd tried everything — agencies, courses, hiring in-house. Nothing stuck. Within six months of building the system he designed, our lead flow tripled and I actually took my first proper holiday in three years."</p>
+                <p class="testimonial-author">— Managing Director, Professional Services Firm</p>
+            </div>
+
+            <p>So here's what I want to offer you...</p>
+
+            <p>If you're running a business that's doing reasonably well but you <em>know</em> there's another level — if you're tired of random tactics and want something that actually compounds — I'd like to talk with you.</p>
+
+            <p>No pitch. No pressure. Just a conversation about where you are, where you want to be, and whether building a proper growth system makes sense for your situation.</p>
+
+            <p>If it does, we can explore working together. If it doesn't, you'll walk away with clarity you didn't have before. Either way, you win.</p>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3>Ready to Stop Guessing and Start Building?</h3>
+            <p>Book a call. Let's map out what a real growth system would look like for your business.</p>
+            <a href="pages/connect.html" class="cta-button">Schedule Your Call Now →</a>
+        </div>
+
+        <div class="letter-body">
+            <p>One more thing before I sign off...</p>
+
+            <p>I only work with a handful of businesses at any given time. Not because I'm trying to create artificial scarcity — I genuinely don't believe in that kind of marketing. But because the work I do requires real attention. Real involvement. Real results.</p>
+
+            <p>If that sounds like what you're looking for, let's talk soon.</p>
+        </div>
+
+        <!-- Signature -->
+        <div class="signature">
+            Yours for systematic growth,
+            <div class="signature-name">Quentin Hunter</div>
+        </div>
+
+        <!-- PS Sections (Halbert's trademark) -->
+        <div class="ps-section">
+            <p><span class="ps-label">P.S.</span> — If you're wondering whether this is right for you: I typically work with business owners who are already successful but frustrated. You've built something real, but you know you're capable of more. You're tired of random tactics and ready for infrastructure. If that's you, we should talk.</p>
+
+            <p><span class="ps-label">P.P.S.</span> — I'm also an active investor. For the right business with solid fundamentals and growth potential, I put capital alongside my time. Not passive money waiting for returns — active partnership building systems together. If that interests you, mention it when we speak.</p>
+
+            <p><span class="ps-label">P.P.P.S.</span> — If you'd rather connect on LinkedIn first, that's fine too. I post regularly about growth systems, AI automation, and the patterns I'm seeing work right now. Find me at <a href="https://www.linkedin.com/in/quentin-hunter/" style="color: var(--blue);">linkedin.com/in/quentin-hunter</a></p>
+        </div>
+    </div>
+
+    <!-- Credentials Strip -->
+    <div class="credentials-strip">
+        <p>ACMA · DigitalMarketer Certified Partner · MindStudio AI Agent Developer · NED Qualified (Institute of Board Members) · 30+ Years Experience</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="pages/resources.html">Resources</a>
+            <a href="pages/privacy-policy.html">Privacy</a>
+            <a href="pages/terms-and-conditions.html">Terms</a>
+        </div>
+        <p>&copy; 2025 Quentin Hunter. All rights reserved.</p>
+    </footer>
+</body>
+</html>

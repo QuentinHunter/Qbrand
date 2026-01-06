@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Ahrefs Analytics -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="w0zRvyT9F2G2FeIjGBnZqQ" async></script>
+    <title>Free Business Valuation Tool | Quentin Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <style>
+        :root { --teal: #0d9488; --teal-dark: #0f766e; --teal-light: #14b8a6; --navy: #1e293b; --white: #ffffff; --cream: #fefce8; --gray-100: #f1f5f9; --gray-300: #cbd5e1; --gray-500: #64748b; --gray-700: #334155; --gray-900: #0f172a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', -apple-system, sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--white); font-size: 18px; }
+        h1, h2, h3 { font-family: 'Merriweather', Georgia, serif; font-weight: 700; line-height: 1.3; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 30px; }
+        .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+        nav { padding: 20px 0; background: var(--white); border-bottom: 1px solid var(--gray-100); }
+        nav .container-wide { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--gray-500); font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 10px 24px !important; border-radius: 6px; }
+
+        .hero { padding: 80px 0 60px; background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%); text-align: center; }
+        .hero h1 { font-size: 2.8rem; color: var(--navy); margin-bottom: 20px; }
+        .hero h1 span { color: var(--teal); }
+        .hero-sub { font-size: 1.2rem; color: var(--gray-500); max-width: 600px; margin: 0 auto 40px; }
+
+        .tool-section { padding: 60px 0; }
+        .tool-intro { text-align: center; margin-bottom: 50px; }
+        .tool-intro h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 15px; }
+        .tool-intro p { color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+
+        .tool-box { background: var(--gray-100); border-radius: 20px; padding: 50px; max-width: 600px; margin: 0 auto; text-align: center; }
+        .tool-box h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 20px; }
+        .tool-box p { color: var(--gray-500); margin-bottom: 30px; }
+        .tool-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--teal); color: var(--white); padding: 18px 40px; text-decoration: none; font-weight: 700; font-size: 1.1rem; border-radius: 8px; transition: all 0.2s; }
+        .tool-cta:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+        .benefits-section { padding: 80px 0; background: var(--cream); }
+        .benefits-section h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 40px; text-align: center; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .benefit-card { background: var(--white); padding: 30px; border-radius: 12px; text-align: center; }
+        .benefit-card h3 { font-family: 'Source Sans 3', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+        .benefit-card p { font-size: 0.95rem; color: var(--gray-500); }
+
+        .cta-section { padding: 80px 0; background: var(--navy); text-align: center; }
+        .cta-section h2 { font-size: 2rem; color: var(--white); margin-bottom: 20px; }
+        .cta-section p { color: var(--gray-300); max-width: 550px; margin: 0 auto 40px; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--teal); color: var(--white); padding: 18px 40px; text-decoration: none; font-weight: 700; font-size: 1rem; border-radius: 8px; transition: all 0.2s; }
+        .cta-btn:hover { background: var(--teal-light); transform: translateY(-2px); }
+
+        footer { padding: 40px 0; background: var(--gray-900); color: var(--white); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; }
+        .footer-brand { font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 700; }
+        .footer-links a { color: var(--gray-500); text-decoration: none; margin-left: 25px; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--white); }
+
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } .benefits-grid { grid-template-columns: 1fr; } .tool-box { padding: 30px 20px; } .footer-content { flex-direction: column; gap: 20px; text-align: center; } .footer-links a { margin: 0 12px; } }
+    </style>
+</head>
+<body>
+    <nav><div class="container-wide"><a href="../index.html" class="logo">Quentin Hunter</a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="story.html">Story</a></li><li><a href="offerings.html">Offerings</a></li><li><a href="speaking.html">Speaking</a></li><li><a href="resources.html">Resources</a></li><li><a href="blog.html">Blog</a></li><li><a href="community.html">Community</a></li><li><a href="connect.html" class="nav-cta">Connect</a></li></ul></div></nav>
+
+    <section class="hero"><div class="container"><h1>What is your business <span>really worth?</span></h1><p class="hero-sub">Get a preliminary valuation in minutes. Understand the key factors that drive your business value, and where you can improve.</p></div></section>
+
+    <section class="tool-section"><div class="container">
+        <div class="tool-intro"><h2>Free Business Valuation Tool</h2><p>Answer a few questions about your business and receive an instant preliminary valuation based on industry multiples and key value drivers.</p></div>
+        <div class="tool-box">
+            <h3>Access the Valuation Tool</h3>
+            <p>This tool is available in the Business Growth Hub, along with templates, frameworks, and AI tools to help you grow.</p>
+            <a href="https://my.quentinhunter.com" target="_blank" class="tool-cta">Get Free Access <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+    </div></section>
+
+    <section class="benefits-section"><div class="container-wide">
+        <h2>What you will learn</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card"><h3>Current Valuation Range</h3><p>Understand what your business might be worth based on industry standards</p></div>
+            <div class="benefit-card"><h3>Key Value Drivers</h3><p>Identify the factors that most impact your business value</p></div>
+            <div class="benefit-card"><h3>Improvement Opportunities</h3><p>Discover specific areas to focus on to increase your valuation</p></div>
+        </div>
+    </div></section>
+
+    <section class="cta-section"><div class="container">
+        <h2>Want a detailed valuation?</h2>
+        <p>The free tool gives you a starting point. For a comprehensive valuation with personalised recommendations, book a call.</p>
+        <a href="connect.html" class="cta-btn">Discuss Working Together <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div></section>
+
+    <footer><div class="container-wide"><div class="footer-content"><span class="footer-brand">Quentin Hunter</span><div class="footer-links"><a href="resources.html">Resources</a><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a><a href="https://www.linkedin.com/in/quentin-hunter/" target="_blank">LinkedIn</a></div></div></div></footer>
+
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Vercel Speed Insights -->
+    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

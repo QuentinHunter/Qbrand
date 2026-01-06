@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/growthquiz/:path*",
+      "destination": "https://growthquiz-quentinhunter.vercel.app/growthquiz/:path*"
+    },
+    {
+      "source": "/api/quiz/:path*",
+      "destination": "https://growthquiz-quentinhunter.vercel.app/api/quiz/:path*"
+    }
+  ]
+}

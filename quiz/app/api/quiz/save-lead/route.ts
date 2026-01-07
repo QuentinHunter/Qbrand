@@ -11,10 +11,10 @@ export async function POST(request: NextRequest) {
     )
 
     const body = await request.json()
-    const { firstName, lastName, email, companyName, businessInfo, results } = body
+    const { firstName, lastName, email, companyName, annualSales, businessInfo, results } = body
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !companyName) {
+    if (!firstName || !lastName || !email || !companyName || !annualSales) {
       return NextResponse.json(
         { success: false, error: 'All fields are required' },
         { status: 400 }
@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
         last_name: lastName,
         email: email.toLowerCase(),
         company_name: companyName,
+        annual_sales: annualSales,
         business_info: businessInfo || '',
         overall_score: results?.overallPercentage || 0,
         zone: results?.zone || 'UNKNOWN',
@@ -59,6 +60,7 @@ export async function POST(request: NextRequest) {
       lastName,
       email,
       companyName,
+      annualSales,
       businessInfo,
       results
     }).catch(err => console.error('Failed to send admin notification:', err))
@@ -85,10 +87,11 @@ async function sendAdminNotification(data: {
   lastName: string
   email: string
   companyName: string
+  annualSales: string
   businessInfo?: string
   results: any
 }) {
-  const { firstName, lastName, email, companyName, businessInfo, results } = data
+  const { firstName, lastName, email, companyName, annualSales, businessInfo, results } = data
 
   // Get zone info
   const zone = results?.zone ? ZONES[results.zone as keyof typeof ZONES] : null
@@ -151,6 +154,7 @@ async function sendAdminNotification(data: {
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
         <p><strong>Business:</strong> ${companyName}</p>
+        <p><strong>Annual Sales:</strong> ${annualSales}</p>
       </div>
 
       ${businessInfo ? `

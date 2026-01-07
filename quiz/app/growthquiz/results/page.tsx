@@ -11,6 +11,7 @@ interface LeadData {
   lastName: string
   email: string
   companyName: string
+  annualSales: string
   businessInfo: string
 }
 
@@ -21,6 +22,7 @@ export default function QuizResultsPage() {
     lastName: '',
     email: '',
     companyName: '',
+    annualSales: '',
     businessInfo: ''
   })
   const [hasSubmittedDetails, setHasSubmittedDetails] = useState(false)
@@ -36,11 +38,11 @@ export default function QuizResultsPage() {
     }
   }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setLeadData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const isFormValid = leadData.firstName && leadData.lastName && leadData.email && leadData.companyName
+  const isFormValid = leadData.firstName && leadData.lastName && leadData.email && leadData.companyName && leadData.annualSales
 
   const handleSubmitDetails = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -217,6 +219,20 @@ export default function QuizResultsPage() {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
                   placeholder="Your Business Ltd"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">Annual Sales Revenue (£) *</label>
+                <input
+                  type="number"
+                  name="annualSales"
+                  required
+                  value={leadData.annualSales}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all"
+                  placeholder="e.g. 500000"
+                  min="0"
                 />
               </div>
 

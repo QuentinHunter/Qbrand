@@ -7,14 +7,17 @@
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
-// Create Supabase client with service role for server-side operations
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 export type EmailNotificationType =
   | 'booking_confirmation'
@@ -48,7 +51,7 @@ export async function checkEmailConsent(
   notificationType: EmailNotificationType
 ): Promise<boolean> {
   try {
-    const { data: preferences, error } = await supabaseAdmin
+    const { data: preferences, error } = await getSupabaseAdmin()
       .from('email_preferences')
       .select('*')
       .eq('user_id', userId)
@@ -56,7 +59,7 @@ export async function checkEmailConsent(
 
     if (error || !preferences) {
       // If no preferences exist, create default ones
-      await supabaseAdmin
+      await getSupabaseAdmin()
         .from('email_preferences')
         .insert({ user_id: userId })
         .select()
@@ -117,7 +120,7 @@ export async function sendEmail(params: SendEmailParams): Promise<{
     }
 
     // Send email via Resend
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: 'Quentin Hunter <info@quentinhunter.com>',
       to,
       subject,
@@ -163,7 +166,7 @@ export async function sendEmail(params: SendEmailParams): Promise<{
       });
 
       // Update last email sent timestamp
-      await supabaseAdmin
+      await getSupabaseAdmin()
         .from('email_preferences')
         .update({ last_email_sent_at: new Date().toISOString() })
         .eq('user_id', userId);
@@ -195,7 +198,7 @@ async function logEmailActivity(params: {
   metadata?: Record<string, any>;
 }) {
   try {
-    await supabaseAdmin
+    await getSupabaseAdmin()
       .from('email_activity_log')
       .insert({
         user_id: params.userId || null,
@@ -217,7 +220,7 @@ async function logEmailActivity(params: {
  */
 export async function getUnsubscribeToken(userId: string): Promise<string | null> {
   try {
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await getSupabaseAdmin()
       .from('email_preferences')
       .select('unsubscribe_token')
       .eq('user_id', userId)
@@ -243,7 +246,7 @@ export async function unsubscribeUser(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     if (unsubscribeFrom === 'all') {
-      const { error } = await supabaseAdmin
+      const { error } = await getSupabaseAdmin()
         .from('email_preferences')
         .update({
           unsubscribed_all: true,
@@ -256,7 +259,7 @@ export async function unsubscribeUser(
 
       if (error) throw error;
     } else {
-      const { error } = await supabaseAdmin
+      const { error } = await getSupabaseAdmin()
         .from('email_preferences')
         .update({
           marketing: false,
@@ -291,7 +294,7 @@ export async function recordConsent(params: {
   metadata?: Record<string, any>;
 }): Promise<{ success: boolean; error?: string }> {
   try {
-    const { error } = await supabaseAdmin
+    const { error } = await getSupabaseAdmin()
       .from('user_consents')
       .insert({
         user_id: params.userId,

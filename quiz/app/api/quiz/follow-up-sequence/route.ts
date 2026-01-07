@@ -15,10 +15,12 @@ import { randomBytes } from 'crypto';
 import { sendEmail } from '@/lib/email/service';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 // Calendar URL for booking calls
 const CALENDAR_URL = 'https://link.quentinhunter.com/widget/booking/jBnz1S30qIJMi0enyxVK';
@@ -53,7 +55,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get the lead data
-    const { data: lead, error: leadError } = await supabaseAdmin
+    const { data: lead, error: leadError } = await getSupabaseAdmin()
       .from('quiz_leads')
       .select('*')
       .eq('id', leadId)
@@ -79,7 +81,7 @@ export async function POST(request: NextRequest) {
 
     // Update lead with report URL and start sequence
     const now = new Date();
-    const { error: updateError } = await supabaseAdmin
+    const { error: updateError } = await getSupabaseAdmin()
       .from('quiz_leads')
       .update({
         report_url: reportUrl,
@@ -171,7 +173,7 @@ async function sendFollowUpEmail(
       }
 
       // Update lead with email sent status
-      await supabaseAdmin
+      await getSupabaseAdmin()
         .from('quiz_leads')
         .update({
           last_email_sent: emailNumber,
@@ -309,7 +311,7 @@ export async function GET(request: NextRequest) {
     const now = new Date();
 
     // Find leads that need their next email sent (exclude unsubscribed)
-    const { data: leads, error } = await supabaseAdmin
+    const { data: leads, error } = await getSupabaseAdmin()
       .from('quiz_leads')
       .select('*')
       .eq('email_sequence_started', true)

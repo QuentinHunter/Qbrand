@@ -3,10 +3,12 @@ import Anthropic from '@anthropic-ai/sdk'
 import { createClient } from '@supabase/supabase-js'
 import { sendEmail } from '@/lib/email/service'
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+}
 
 const PILLARS: Record<string, { name: string; color: string }> = {
   ATTRACT: { name: 'Attract', color: '#14B8A6' },
@@ -35,7 +37,7 @@ export async function POST(request: NextRequest) {
     let email = bodyEmail || ''
     if (leadId) {
       try {
-        const { data: leadData } = await supabaseAdmin
+        const { data: leadData } = await getSupabaseAdmin()
           .from('quiz_leads')
           .select('business_info, email')
           .eq('id', leadId)
@@ -166,7 +168,7 @@ Generate the report now:`
       const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://quentinhunter.com'
       reportUrl = `${baseUrl}/api/quiz/report/${leadId}`
 
-      await supabaseAdmin
+      await getSupabaseAdmin()
         .from('quiz_leads')
         .update({
           report_html: htmlReport,

@@ -29,7 +29,7 @@
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Receive actionable recommendations</li>
                 </ul>
                 <a href="https://quentinhunter.com/growthquiz" target="_blank" rel="noopener" class="exit-popup-cta">Take the Free Assessment →</a>
-                <p class="exit-popup-note">No email required to start. Results in 5 minutes.</p>
+                <p class="exit-popup-note">Takes just 5 minutes. 100% free.</p>
             </div>
         </div>
     </div>
@@ -217,34 +217,43 @@
         localStorage.setItem('exitPopupDismissed', expiry.toString());
     };
 
-    // Exit intent detection (desktop)
-    document.addEventListener('mouseout', function(e) {
-        if (e.clientY < 10 && e.relatedTarget === null) {
+    // Exit intent detection (desktop) - triggers when mouse leaves top of window
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 0) {
             showExitPopup();
         }
     });
 
-    // Scroll-based trigger for mobile
+    // Backup: also detect mouseout near top
+    document.addEventListener('mouseout', function(e) {
+        if (!e.relatedTarget && !e.toElement && e.clientY < 10) {
+            showExitPopup();
+        }
+    });
+
+    // Scroll-based trigger for mobile - when user scrolls back up significantly
     let maxScroll = 0;
     let scrollTriggerEnabled = false;
 
     window.addEventListener('scroll', function() {
         const currentScroll = window.scrollY;
 
-        if (currentScroll > window.innerHeight * 0.5) {
+        // Enable after scrolling down 30% of viewport
+        if (currentScroll > window.innerHeight * 0.3) {
             scrollTriggerEnabled = true;
             maxScroll = Math.max(maxScroll, currentScroll);
         }
 
-        if (scrollTriggerEnabled && maxScroll > window.innerHeight && currentScroll < maxScroll * 0.3) {
+        // Trigger if scrolling back up more than 50% of max scroll distance
+        if (scrollTriggerEnabled && maxScroll > 300 && currentScroll < maxScroll * 0.5) {
             showExitPopup();
         }
     });
 
-    // Also show after 45 seconds
+    // Also show after 20 seconds if still on page
     setTimeout(function() {
         showExitPopup();
-    }, 45000);
+    }, 20000);
 
     // Close on overlay click
     document.getElementById('exitPopup').addEventListener('click', function(e) {

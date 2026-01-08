@@ -88,7 +88,11 @@ SECTION: EXECUTIVE SUMMARY
 Write 2-3 warm, encouraging paragraphs about their position and potential. Be honest but optimistic.
 
 SECTION: UNDERSTANDING YOUR SCORE
-Explain what ${results.overallPercentage}% means practically. Clarify this is an assessment score measuring business systems, not a performance metric. Explain what businesses at this level typically experience.
+Explain what ${results.overallPercentage}% means practically. Clarify this is a Growth Assessment score measuring the strength of your business growth systems across 4 pillars, not a direct performance metric.
+
+IMPORTANT: The "Convert" pillar measures your Conversion Growth Accelerator score - this is NOT the same as your conversion rate. The Conversion Growth Accelerator is a broader measure of how well your business systems convert leads and awareness into paying customers. It encompasses your sales process, offer clarity, objection handling, pricing strategy, and buyer journey - not just a single conversion rate percentage. However, your actual conversion rates (website, sales calls, etc.) are good indicators of how well your Conversion Growth Accelerator is performing.
+
+Explain what businesses at this level typically experience.
 
 SECTION: YOUR PRIMARY GROWTH CONSTRAINT - ${weakestPillar.name.toUpperCase()}
 Deep dive into why ${weakestPillar.name} at ${weakestScore}% is holding them back. Explain the symptoms, root causes, and cascading effects on other areas.
@@ -116,24 +120,31 @@ Important: Each section (INVESTMENT, TIMEFRAME, WHAT TO DO, WHY IT WORKS, EXPECT
 Mix of: 2-3 free options, 2-3 low-cost options, 2-3 premium options. Mix of quick wins and strategic builds. Focus on tactics relevant to the 4 pillars: Attract (lead generation, content, traffic), Convert (sales funnels, offers, conversion), Ascend (retention, upsells, referrals), Accelerate (systems, automation, team).
 
 SECTION: BUSINESS GROWTH BENCHMARKS
-Write a brief intro paragraph about how these benchmarks help them understand where they stand. Then include these key metrics:
+Write a brief intro paragraph about how these benchmarks help them understand where they stand. Select benchmarks that are MOST RELEVANT to their specific problems based on their quiz results and weakest pillar. Where possible, make benchmarks industry-specific if you know their business type from the context provided.
 
-General Business Key Metrics:
-- Lead-to-customer conversion: 2-5% (top performers achieve 10%+)
-- Average customer lifetime value: 3-5x initial purchase value
-- Customer retention rate target: 85-95% annually
-- Net Promoter Score target: 30-50+ (excellent: 70+)
-- Referral rate: 10-25% of happy customers refer when asked directly
-- Cost per lead (paid ads): £20-£100 depending on industry
+Include 6-8 of the most relevant benchmarks from categories like:
 
-Marketing Benchmarks:
-- LinkedIn Ads CPC for B2B: £5-£15
-- Google Ads for service businesses: £2-£8 per click
-- Email open rates: 20-35%
-- Email click rates: 2-5%
-- Website lead conversion: 2-5% of visitors
+Lead Generation & Attraction (if Attract is weak):
+- Website visitor-to-lead conversion: 2-5% average, 10%+ for optimised sites (Source: HubSpot 2024 Marketing Report)
+- Cost per lead varies significantly: £15-50 for B2C, £50-200 for B2B services (Source: WordStream Industry Benchmarks 2024)
+- Organic social engagement rate: 1-3% is good, 3-6% is excellent (Source: Sprout Social 2024)
 
-Write 2-3 paragraphs explaining how they can use these benchmarks to evaluate their own performance and set realistic targets.
+Sales & Conversion (if Convert is weak):
+- Sales qualified lead to customer: 20-30% for warm leads (Source: Salesforce State of Sales 2024)
+- Proposal-to-close rate: 25-40% for service businesses (Source: HubSpot Sales Statistics)
+- Average sales cycle: 30-90 days for B2B, varies by deal size
+
+Retention & Growth (if Ascend is weak):
+- Customer retention rate: 85-95% annually is healthy (Source: Bain & Company)
+- Net Promoter Score: 30-50 is good, 70+ is world-class (Source: Bain NPS Benchmarks)
+- Repeat purchase rate: 27% average, 40%+ for top performers (Source: Adobe Digital Index)
+
+Systems & Scale (if Accelerate is weak):
+- Revenue per employee: £100-200K for service businesses (varies by industry)
+- Gross margin targets: 50-70% for services, 30-50% for products
+- Marketing spend as % of revenue: 5-15% depending on growth stage (Source: Gartner CMO Survey 2024)
+
+Write 2-3 paragraphs explaining how they can use these benchmarks to evaluate their specific situation and set realistic targets based on their weakest pillar.
 
 SECTION: YOUR NEXT STEPS
 End with clear call to action. Mention booking a free strategy call with Quentin Hunter to create a prioritised implementation roadmap.
@@ -186,6 +197,17 @@ Generate the report now:`
       zone,
       weakestPillar
     }).catch(err => console.error('Failed to send admin report notification:', err))
+
+    // Send customer email with report link
+    if (email && reportUrl) {
+      sendCustomerReportEmail({
+        email,
+        businessName,
+        reportUrl,
+        overallScore: results.overallPercentage,
+        zone
+      }).catch(err => console.error('Failed to send customer report email:', err))
+    }
 
     return NextResponse.json({ success: true, report: reportContent, htmlReport, reportUrl })
   } catch (error) {
@@ -1032,7 +1054,7 @@ function generateWowReport(
       <div class="cta-content">
         <div class="cta-badge">Free Strategy Session</div>
         <h3 class="cta-title">Ready to Accelerate Your Growth?</h3>
-        <p class="cta-text">Book a complimentary 30-minute strategy call with Quentin Hunter to discuss your results and create a prioritised action plan for your business.</p>
+        <p class="cta-text">Book a complimentary 60-minute strategy call with Quentin Hunter to discuss your results and create a prioritised action plan for your business.</p>
         <a href="https://link.quentinhunter.com/widget/booking/jBnz1S30qIJMi0enyxVK" class="cta-button">
           Book Your Free Call
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1098,6 +1120,97 @@ async function sendAdminReportNotification(data: {
   await sendEmail({
     to: 'info@quentinhunter.com',
     subject: `Report Purchased: ${businessName} - ${email}`,
+    html
+  })
+}
+
+// Send customer their report link via email
+async function sendCustomerReportEmail(data: {
+  email: string
+  businessName: string
+  reportUrl: string
+  overallScore: number
+  zone: { label: string; color: string }
+}) {
+  const { email, businessName, reportUrl, overallScore, zone } = data
+
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc;">
+      <div style="max-width: 600px; margin: 0 auto; background: white;">
+        <!-- Header -->
+        <div style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); padding: 40px 30px; text-align: center;">
+          <h1 style="color: white; margin: 0 0 8px 0; font-size: 28px; font-weight: 700;">Your Growth Report is Ready</h1>
+          <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 16px;">Personalised insights for ${businessName}</p>
+        </div>
+
+        <!-- Score Summary -->
+        <div style="padding: 30px; text-align: center; border-bottom: 1px solid #e2e8f0;">
+          <div style="display: inline-block; width: 100px; height: 100px; border-radius: 50%; background: ${zone.color}15; border: 4px solid ${zone.color}; line-height: 92px; font-size: 32px; font-weight: 800; color: ${zone.color};">
+            ${overallScore}%
+          </div>
+          <p style="margin: 16px 0 0 0; font-size: 18px; font-weight: 600; color: ${zone.color};">${zone.label}</p>
+        </div>
+
+        <!-- Main Content -->
+        <div style="padding: 30px;">
+          <p style="color: #334155; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+            Thank you for purchasing your Growth Assessment Report. Your personalised report is now ready and includes:
+          </p>
+
+          <ul style="color: #475569; font-size: 15px; line-height: 1.8; margin: 0 0 24px 0; padding-left: 20px;">
+            <li>Detailed analysis of your growth score</li>
+            <li>Your primary growth constraint explained</li>
+            <li>8 personalised action recommendations</li>
+            <li>Industry benchmarks and comparisons</li>
+            <li>Clear next steps to accelerate growth</li>
+          </ul>
+
+          <!-- CTA Button -->
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="${reportUrl}" style="display: inline-block; background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); color: white; text-decoration: none; padding: 16px 40px; border-radius: 12px; font-size: 18px; font-weight: 700; box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);">
+              View Your Report
+            </a>
+          </div>
+
+          <p style="color: #64748b; font-size: 14px; text-align: center; margin: 24px 0 0 0;">
+            Bookmark this link to access your report anytime.
+          </p>
+        </div>
+
+        <!-- Book a Call CTA -->
+        <div style="background: #0f172a; padding: 30px; text-align: center;">
+          <h3 style="color: white; margin: 0 0 12px 0; font-size: 20px;">Want Expert Guidance?</h3>
+          <p style="color: #94a3b8; margin: 0 0 20px 0; font-size: 15px;">
+            Book a free 60-minute strategy call to discuss your results and create a prioritised action plan.
+          </p>
+          <a href="https://link.quentinhunter.com/widget/booking/jBnz1S30qIJMi0enyxVK" style="display: inline-block; background: #f59e0b; color: #0f172a; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 700;">
+            Book Free Call
+          </a>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding: 24px 30px; text-align: center; border-top: 1px solid #e2e8f0;">
+          <p style="color: #94a3b8; font-size: 13px; margin: 0;">
+            Questions? Reply to this email or contact us at info@quentinhunter.com
+          </p>
+          <p style="color: #cbd5e1; font-size: 12px; margin: 16px 0 0 0;">
+            Quentin Hunter | Growth Strategy for Owner-Managed Businesses
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `
+
+  await sendEmail({
+    to: email,
+    subject: `Your Growth Assessment Report is Ready - ${businessName}`,
     html
   })
 }

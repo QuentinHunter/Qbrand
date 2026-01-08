@@ -124,7 +124,7 @@ function ReportSuccessContent() {
               </svg>
             </div>
             <h1 className="text-2xl font-bold text-slate-900 mb-2">Generating Your Report...</h1>
-            <p className="text-slate-600 mb-4">Our AI is creating your personalised growth report. This takes about 30 seconds.</p>
+            <p className="text-slate-600 mb-4">Our AI is creating your personalised growth report. This can take up to 5 minutes.</p>
             <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
               <div className="bg-teal-600 h-full rounded-full animate-pulse" style={{ width: '60%' }} />
             </div>

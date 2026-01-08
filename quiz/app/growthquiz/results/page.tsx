@@ -386,11 +386,11 @@ export default function QuizResultsPage() {
             <div className="text-4xl mb-4">📅</div>
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Book Free Strategy Call</h3>
             <p className="text-slate-600 mb-6">
-              Get personalised advice in a 30-minute call. We'll review your results, identify quick wins, and create a tailored action plan for your business.
+              Get personalised advice in a 60-minute call. We'll review your results, identify quick wins, and create a tailored action plan for your business.
             </p>
             <ul className="space-y-3 mb-6">
               {[
-                '30-minute personalised consultation',
+                '60-minute personalised consultation',
                 'Custom action plan for your business',
                 'Expert guidance on your biggest bottleneck',
                 'No obligation, just practical advice'

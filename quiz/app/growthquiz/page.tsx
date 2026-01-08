@@ -138,7 +138,7 @@ export default function QuizLandingPage() {
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
             How It Works
           </h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
               { num: '1', title: 'Answer 16 Questions', desc: '5 minutes of your time' },
               { num: '2', title: 'Get Your Score', desc: 'Instant results' },
@@ -150,9 +150,6 @@ export default function QuizLandingPage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-1">{step.title}</h3>
                 <p className="text-slate-600">{step.desc}</p>
-                {i < 2 && (
-                  <div className="hidden md:block w-16 h-0.5 bg-slate-300 mt-8 ml-32 -mr-16" />
-                )}
               </div>
             ))}
           </div>
@@ -195,13 +192,6 @@ export default function QuizLandingPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Stop Guessing. Start Growing.
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 mb-8">
-            <span>500+ Businesses Assessed</span>
-            <span>•</span>
-            <span>£2.8M+ Revenue Unlocked</span>
-            <span>•</span>
-            <span>4.9/5 Average Rating</span>
-          </div>
           <Link href="/growthquiz/questions">
             <motion.button
               whileHover={{ scale: 1.02 }}

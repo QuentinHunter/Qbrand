@@ -1,14 +1,24 @@
 (function() {
+    console.log('[Exit Popup] Script loaded');
+
     // Check if popup was already shown this session or dismissed recently
     const dismissedTime = localStorage.getItem('exitPopupDismissed');
-    if (sessionStorage.getItem('exitPopupShown') || (dismissedTime && Date.now() < parseInt(dismissedTime))) {
+    if (sessionStorage.getItem('exitPopupShown')) {
+        console.log('[Exit Popup] Already shown this session');
+        return;
+    }
+    if (dismissedTime && Date.now() < parseInt(dismissedTime)) {
+        console.log('[Exit Popup] Dismissed recently, skipping');
         return;
     }
 
     // Don't show on quiz pages
     if (window.location.pathname.includes('growthquiz')) {
+        console.log('[Exit Popup] On quiz page, skipping');
         return;
     }
+
+    console.log('[Exit Popup] Initializing popup');
 
     // Inject popup HTML
     const popupHTML = `
@@ -202,11 +212,18 @@
     let popupShown = false;
 
     window.showExitPopup = function() {
+        console.log('[Exit Popup] showExitPopup called, popupShown:', popupShown);
         if (popupShown) return;
         popupShown = true;
         sessionStorage.setItem('exitPopupShown', 'true');
-        document.getElementById('exitPopup').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        const popup = document.getElementById('exitPopup');
+        if (popup) {
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            console.log('[Exit Popup] Popup displayed!');
+        } else {
+            console.error('[Exit Popup] Popup element not found!');
+        }
     };
 
     window.closeExitPopup = function() {
@@ -219,6 +236,7 @@
 
     // Exit intent detection (desktop) - triggers when mouse leaves top of window
     document.addEventListener('mouseleave', function(e) {
+        console.log('[Exit Popup] mouseleave event, clientY:', e.clientY);
         if (e.clientY < 0) {
             showExitPopup();
         }
@@ -227,6 +245,7 @@
     // Backup: also detect mouseout near top
     document.addEventListener('mouseout', function(e) {
         if (!e.relatedTarget && !e.toElement && e.clientY < 10) {
+            console.log('[Exit Popup] mouseout triggered');
             showExitPopup();
         }
     });
@@ -246,14 +265,17 @@
 
         // Trigger if scrolling back up more than 50% of max scroll distance
         if (scrollTriggerEnabled && maxScroll > 300 && currentScroll < maxScroll * 0.5) {
+            console.log('[Exit Popup] scroll trigger activated');
             showExitPopup();
         }
     });
 
-    // Also show after 20 seconds if still on page
+    // Show after 10 seconds for testing (change to 20-45 for production)
+    console.log('[Exit Popup] Setting 10 second timeout');
     setTimeout(function() {
+        console.log('[Exit Popup] Timeout triggered');
         showExitPopup();
-    }, 20000);
+    }, 10000);
 
     // Close on overlay click
     document.getElementById('exitPopup').addEventListener('click', function(e) {
